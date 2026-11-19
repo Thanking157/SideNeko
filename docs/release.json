@@ -1,5 +1,6 @@
 {
   "available": false,
+  "channel": "development",
   "version": null,
   "installURL": null,
   "sha256": null,
