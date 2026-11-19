@@ -13,6 +13,9 @@ Copyright (C) 2026 thanking157。SideNeko 原創程式碼採用
 
 [English README](README.en.md)
 
+- 專案原始碼：<https://github.com/Thanking157/SideNeko>
+- 安裝網站：<https://thanking157.github.io/SideNeko/>
+
 ## v1.0 目標
 
 - iPhone／iPad 裝置端首次安裝，不依賴 Mac 或 Windows 電腦。
@@ -84,8 +87,9 @@ GitHub Pages 安裝網站只負責提供公開原始碼、版本資訊、雜湊�
 swift test
 ```
 
-使用 Xcode 開啟 `SideNeko.xcodeproj` 可建置 iOS／iPadOS App。目前最低部署版本為
-iOS 17；免電腦自機配對路徑以 iOS 27 為目標。
+先執行 `scripts/build-signing-core.sh` 產生本機 XCFramework，再使用 Xcode 開啟
+`SideNeko.xcodeproj` 建置 iOS／iPadOS App。目前最低部署版本為 iOS 17；免電腦
+自機配對路徑以 iOS 27 為目標。
 
 測試狀態與尚待實機驗證項目請看 [TESTING.md](docs/TESTING.md)。
 
