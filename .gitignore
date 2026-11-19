@@ -16,6 +16,10 @@ xcuserdata/
 *.mobileprovision
 *.p12
 *.cer
+# Public Apple trust anchors compiled into apple-codesign-quick. These are not
+# developer certificates or signing identities; keep every other .cer ignored.
+!SideNekoFull/rust-core/vendor/apple-codesign-quick/assets/AppleIncRootCertificate.cer
+!SideNekoFull/rust-core/vendor/apple-codesign-quick/assets/AppleWWDRCAG3.cer
 *.key
 *.pem
 *.pairing
