@@ -3,55 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#7667d8">
-  <meta name="description" content="SideNeko：免費、非商業、開源的 iOS／iPadOS 免電腦 IPA 側載工具。">
+  <meta name="theme-color" content="#f29a52">
+  <meta name="description" content="SideNeko：在 iPhone 上簽署自己的 IPA，免電腦側載 w">
   <meta name="sideneko-repository" content="https://github.com/Thanking157/SideNeko">
+  <link rel="icon" href="assets/icon.png">
   <title>SideNeko — Sideloading, the neko way.</title>
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="SideNeko 首頁"><span aria-hidden="true">🐾</span> SideNeko</a>
-    <nav aria-label="網站導覽">
-      <a href="#install">安裝</a><a href="#privacy">隱私</a><a id="source-link" href="https://github.com/Thanking157/SideNeko" rel="noopener">原始碼</a>
-    </nav>
-  </header>
+  <header class="nav"><a class="brand" href="#top"><span aria-hidden="true">🐾</span> SideNeko</a><nav aria-label="網站導覽"><a href="#guide">教學</a><a href="#downloads">下載</a><a href="#privacy">隱私</a><button id="theme-toggle" type="button" aria-label="切換深色模式">🌙</button></nav></header>
   <main id="top">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">免費・非商業・開源</p>
-        <h1>Sideloading,<br><span>the neko way.</span></h1>
-        <p class="lead">只用自己的裝置、Apple 帳號與你有權使用的 IPA。沒有 App 商店、共享企業憑證或 SideNeko 自營簽署伺服器。</p>
-        <div class="actions">
-          <a class="button disabled" id="install-button" aria-disabled="true">正式版尚未開放</a>
-          <a class="button secondary" href="#install">查看安裝方式</a>
-        </div>
-        <p class="status" id="release-status" role="status">正在讀取版本狀態…</p>
-      </div>
-      <div class="cat-card" aria-label="SideNeko 貓咪圖案">
-        <div class="ears"><i></i><i></i></div><div class="face"><b>•</b><span>ᴗ</span><b>•</b></div>
-        <p>by Thanking157</p>
-      </div>
-    </section>
-
-    <section class="panel" id="install">
-      <p class="eyebrow">首次安裝</p><h2>網站不會假裝能繞過 iOS 簽署</h2>
-      <div class="steps">
-        <article><strong>1</strong><h3>確認需求</h3><p>目標流程需要相容的 iOS／iPadOS、Developer Mode、Open Minis 與本機配對通道；實際支援範圍會隨實機測試更新。</p></article>
-        <article><strong>2</strong><h3>執行公開 bootstrap</h3><p>正式發布後，這裡會提供可稽核指令、固定版本、SHA-256 與完整來源，不會提供共享憑證或來源不明 IPA。</p></article>
-        <article><strong>3</strong><h3>使用自己的帳號</h3><p>在裝置端完成 Apple 帳號與 2FA，再匯入自己的 IPA。免費帳號的到期與撤銷限制仍然存在。</p></article>
-      </div>
-      <aside class="notice"><b>目前尚未發布可安裝版本。</b> 在實機登入、簽署、安裝與安全測試完成前，按鈕會保持停用，避免把開發中的檔案說成完成品。</aside>
-    </section>
-
-    <section id="privacy" class="split">
-      <div><p class="eyebrow">安全與隱私</p><h2>你的秘密，不是網站的資料。</h2></div>
-      <ul><li>IPA 在本機選擇與計算雜湊，不上傳到本站。</li><li>密碼與 2FA 驗證碼不寫入檔案或日誌。</li><li>憑證、私鑰、token 與 Anisette 狀態必須存入裝置限定 Keychain。</li><li>任何遠端 Anisette 端點都會在登入前明確顯示。</li></ul>
-    </section>
-
-    <section class="panel compact"><p class="eyebrow">我們不提供</p><h2>沒有線上 IPA 商店，也不替你找 App。</h2><p>SideNeko 只處理你自己選擇且有權使用的 IPA；不自動下載任意第三方 App，不散布 SideInstaller IPA、siboot 二進位檔或 Apple 簽署材料。</p></section>
+    <section class="hero"><div><p class="eyebrow">免費・非商業・開源 ฅ^•ﻌ•^ฅ</p><h1>Sideloading,<br><span>the neko way.</span></h1><p class="lead">免電腦，用 iPhone 就可以簽名自己的 IPA 來使用 :D</p><div class="actions"><a class="button" id="install-button" href="https://github.com/Thanking157/SideNeko/releases">下載 v0.1 開發測試版</a><a class="button secondary" href="#guide">先看使用教學 w</a></div><p class="status" id="release-status" role="status">正在確認測試版狀態…</p></div><div class="logo-card"><img src="assets/icon.png" alt="SideNeko 橘色貓咪圖示"><p>by Thanking157 awa</p></div></section>
+    <section class="panel" id="guide"><p class="eyebrow">首次安裝</p><h2>使用教學 :D</h2><p class="intro">以下是 FrizzleM／siboot 公開的 iOS 27 免電腦 bootstrap 流程。需要 Wi‑Fi、已開啟開發者模式，以及 Open Minis 1.16 以上。</p><ol class="steps"><li><b>先裝兩個免費 App</b><span>從 App Store 安裝 Open Minis 與 LocalDevVPN，接著把 LocalDevVPN 連線。</span><div class="mini-actions"><a href="https://apps.apple.com/app/id6759188481">Open Minis</a><a href="https://apps.apple.com/app/id6755608044">LocalDevVPN</a></div></li><li><b>打開 Open Minis 終端機</b><span>點右上角終端機圖示 → Shell Terminal，貼上官方 siboot 指令：</span><code>wget -qO- https://raw.githubusercontent.com/FrizzleM/siboot/main/minis/install.sh | sh</code></li><li><b>讓 iPhone 自己配對</b><span>在 siboot 頁面點 Start pairing，再到「設定 → 隱私權與安全性 → 開發者模式 → Pair with siboot」，輸入密碼與畫面上的六位數配對碼。</span></li><li><b>回到 Minis 完成登入</b><span>輸入自己的 Apple 帳號、密碼與 2FA 驗證碼，Minis 要保持在前景直到完成。免費帳號通常只有 7 天簽署期。</span></li><li><b>第一次要信任憑證</b><span>到「設定 → 一般 → VPN 與裝置管理」信任自己的 Apple 帳號開發憑證。</span></li><li><b>安裝 SideNeko v0.1</b><span>保持 LocalDevVPN 連線並打開 SideInstaller，再回到本頁點最上面的橘色按鈕。確認下載來源是 GitHub 的 Thanking157／SideNeko，讓 SideInstaller 簽署並安裝，完成啦 w</span></li></ol><aside class="notice"><b>先說清楚 @@</b> 上游指令先安裝 SideInstaller，再由它安裝 SideNeko。SideNeko v0.1 是 UI／匯入／核心測試版；自己的 Apple ID 簽署介面仍在製作，不會把 siboot 或 SideInstaller IPA 冒充成原創。</aside></section>
+    <section id="downloads" class="download-section"><p class="eyebrow">官方下載</p><h2>SideStore 與 LiveContainer</h2><p>只放官方 GitHub Release，SideNeko 不代抓檔案，也不放來路不明的 IPA ฅ( ̳• ·̫ • ̳ฅ)</p><div class="download-grid"><a href="https://github.com/SideStore/SideStore/releases"><b>SideStore</b><span>前往官方 GitHub Releases →</span></a><a href="https://github.com/LiveContainer/LiveContainer/releases"><b>LiveContainer</b><span>前往官方 GitHub Releases →</span></a></div></section>
+    <section id="privacy" class="privacy"><p class="eyebrow">安全 &amp; 隱私</p><h2>你的秘密不是網站的資料。</h2><p>本網站只提供免電腦側載教學與測試版下載，不會儲存你的 Apple ID、密碼或驗證碼，就這麼簡單 w</p></section>
   </main>
-  <footer><span>SideNeko © 2026 thanking157</span><span>GNU GPL v3.0・Sideloading, the neko way.</span></footer>
+  <footer><span>SideNeko © 2026 thanking157</span><a href="https://github.com/Thanking157/SideNeko">原始碼・GPL v3.0</a></footer>
 </body>
 </html>

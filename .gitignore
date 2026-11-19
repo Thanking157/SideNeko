@@ -3,6 +3,7 @@ work/
 SigningCore/target/
 SigningCore/build/
 .build/
+dist/
 DerivedData/
 *.xcuserstate
 xcuserdata/
