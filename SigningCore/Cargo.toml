@@ -1,0 +1,25 @@
+[package]
+name = "sideneko-signing-core"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-only"
+publish = false
+
+[lib]
+name = "sideneko_signing_core"
+crate-type = ["staticlib"]
+
+[features]
+default = []
+engine = ["dep:isideload", "dep:tokio"]
+
+[dependencies]
+isideload = { version = "=0.5.2", default-features = false, features = ["install", "tokio-mt"], optional = true }
+tokio = { version = "1.49", features = ["rt", "sync"], optional = true }
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+opt-level = "s"
+panic = "abort"
+strip = "symbols"

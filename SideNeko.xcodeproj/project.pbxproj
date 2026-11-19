@@ -1,0 +1,46 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+
+		A10000000000000000000001 /* SideNekoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* SideNekoApp.swift */; };
+		A10000000000000000000002 /* SideNekoCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* SideNekoCore.swift */; };
+		A10000000000000000000003 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* Localizable.strings */; };
+		A10000000000000000000004 /* SideNekoSigningCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* SideNekoSigningCore.xcframework */; };
+		A10000000000000000000005 /* DeviceOnlyKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* DeviceOnlyKeychain.swift */; };
+
+		A10000000000000000000011 /* SideNekoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNekoApp.swift; sourceTree = "<group>"; };
+		A10000000000000000000012 /* SideNekoCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNekoCore.swift; sourceTree = "<group>"; };
+		A10000000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000000000000000000014 /* SideNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000015 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10000000000000000000016 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A10000000000000000000017 /* Localizable.strings */ = {isa = PBXVariantGroup; children = (A10000000000000000000015 /* en */, A10000000000000000000016 /* zh-Hant */); name = Localizable.strings; sourceTree = "<group>"; };
+		A10000000000000000000018 /* SideNekoSigningCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SigningCore/build/SideNekoSigningCore.xcframework; sourceTree = SOURCE_ROOT; };
+		A10000000000000000000019 /* SideNeko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideNeko-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1000000000000000000001A /* DeviceOnlyKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOnlyKeychain.swift; sourceTree = "<group>"; };
+
+		A10000000000000000000020 = {isa = PBXGroup; children = (A10000000000000000000021 /* SideNekoApp */, A10000000000000000000022 /* SideNekoCore */, A10000000000000000000024 /* Frameworks */, A10000000000000000000023 /* Products */); sourceTree = "<group>"; };
+		A10000000000000000000021 /* SideNekoApp */ = {isa = PBXGroup; children = (A10000000000000000000011 /* SideNekoApp.swift */, A1000000000000000000001A /* DeviceOnlyKeychain.swift */, A10000000000000000000019 /* SideNeko-Bridging-Header.h */, A10000000000000000000013 /* Info.plist */, A10000000000000000000017 /* Localizable.strings */); path = SideNekoApp; sourceTree = "<group>"; };
+		A10000000000000000000022 /* SideNekoCore */ = {isa = PBXGroup; children = (A10000000000000000000012 /* SideNekoCore.swift */); name = SideNekoCore; path = Sources/SideNekoCore; sourceTree = "<group>"; };
+		A10000000000000000000023 /* Products */ = {isa = PBXGroup; children = (A10000000000000000000014 /* SideNeko.app */, ); name = Products; sourceTree = "<group>"; };
+		A10000000000000000000024 /* Frameworks */ = {isa = PBXGroup; children = (A10000000000000000000018 /* SideNekoSigningCore.xcframework */, ); name = Frameworks; sourceTree = "<group>"; };
+
+		A10000000000000000000030 /* SideNeko */ = {isa = PBXNativeTarget; buildConfigurationList = A10000000000000000000040 /* Build configuration list for PBXNativeTarget "SideNeko" */; buildPhases = (A10000000000000000000031 /* Sources */, A10000000000000000000032 /* Frameworks */, A10000000000000000000033 /* Resources */); buildRules = (); dependencies = (); name = SideNeko; productName = SideNeko; productReference = A10000000000000000000014 /* SideNeko.app */; productType = "com.apple.product-type.application"; };
+		A10000000000000000000031 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001 /* SideNekoApp.swift in Sources */, A10000000000000000000005 /* DeviceOnlyKeychain.swift in Sources */, A10000000000000000000002 /* SideNekoCore.swift in Sources */); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000032 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000004 /* SideNekoSigningCore.xcframework in Frameworks */); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000033 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000003 /* Localizable.strings in Resources */); runOnlyForDeploymentPostprocessing = 0; };
+
+		A10000000000000000000040 /* Build configuration list for PBXNativeTarget "SideNeko" */ = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000041 /* Debug */, A10000000000000000000042 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A10000000000000000000043 /* Build configuration list for PBXProject "SideNeko" */ = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000044 /* Debug */, A10000000000000000000045 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A10000000000000000000041 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SideNekoApp/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_OBJC_BRIDGING_HEADER = "SideNekoApp/SideNeko-Bridging-Header.h"; SWIFT_VERSION = 6.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A10000000000000000000042 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SideNekoApp/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OBJC_BRIDGING_HEADER = "SideNekoApp/SideNeko-Bridging-Header.h"; SWIFT_VERSION = 6.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		A10000000000000000000044 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; }; name = Debug; };
+		A10000000000000000000045 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; }; name = Release; };
+
+		A10000000000000000000050 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastUpgradeCheck = 2700; TargetAttributes = {A10000000000000000000030 = {CreatedOnToolsVersion = 27.2; }; }; }; buildConfigurationList = A10000000000000000000043 /* Build configuration list for PBXProject "SideNeko" */; compatibilityVersion = "Xcode 16.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, "zh-Hant"); mainGroup = A10000000000000000000020; productRefGroup = A10000000000000000000023 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (A10000000000000000000030 /* SideNeko */, ); };
+	};
+	rootObject = A10000000000000000000050 /* Project object */;
+}

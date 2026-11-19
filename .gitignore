@@ -1,0 +1,16 @@
+.DS_Store
+work/
+SigningCore/target/
+SigningCore/build/
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.ipa
+*.mobileprovision
+*.p12
+*.cer
+*.key
+*.pem
+*.pairing
+adi.pb

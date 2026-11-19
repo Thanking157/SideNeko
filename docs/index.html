@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7667d8">
+  <meta name="description" content="SideNeko：免費、非商業、開源的 iOS／iPadOS 免電腦 IPA 側載工具。">
+  <title>SideNeko — Sideloading, the neko way.</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="SideNeko 首頁"><span aria-hidden="true">🐾</span> SideNeko</a>
+    <nav aria-label="網站導覽">
+      <a href="#install">安裝</a><a href="#privacy">隱私</a><a id="source-link" href="https://github.com/" rel="noopener">原始碼</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">免費・非商業・開源</p>
+        <h1>Sideloading,<br><span>the neko way.</span></h1>
+        <p class="lead">只用自己的裝置、Apple 帳號與你有權使用的 IPA。沒有 App 商店、共享企業憑證或 SideNeko 自營簽署伺服器。</p>
+        <div class="actions">
+          <a class="button disabled" id="install-button" aria-disabled="true">正式版尚未開放</a>
+          <a class="button secondary" href="#install">查看安裝方式</a>
+        </div>
+        <p class="status" id="release-status" role="status">正在讀取版本狀態…</p>
+      </div>
+      <div class="cat-card" aria-label="SideNeko 貓咪圖案">
+        <div class="ears"><i></i><i></i></div><div class="face"><b>•</b><span>ᴗ</span><b>•</b></div>
+        <p>by Thanking157</p>
+      </div>
+    </section>
+
+    <section class="panel" id="install">
+      <p class="eyebrow">首次安裝</p><h2>網站不會假裝能繞過 iOS 簽署</h2>
+      <div class="steps">
+        <article><strong>1</strong><h3>確認需求</h3><p>目標流程需要相容的 iOS／iPadOS、Developer Mode、Open Minis 與本機配對通道；實際支援範圍會隨實機測試更新。</p></article>
+        <article><strong>2</strong><h3>執行公開 bootstrap</h3><p>正式發布後，這裡會提供可稽核指令、固定版本、SHA-256 與完整來源，不會提供共享憑證或來源不明 IPA。</p></article>
+        <article><strong>3</strong><h3>使用自己的帳號</h3><p>在裝置端完成 Apple 帳號與 2FA，再匯入自己的 IPA。免費帳號的到期與撤銷限制仍然存在。</p></article>
+      </div>
+      <aside class="notice"><b>目前尚未發布可安裝版本。</b> 在實機登入、簽署、安裝與安全測試完成前，按鈕會保持停用，避免把開發中的檔案說成完成品。</aside>
+    </section>
+
+    <section id="privacy" class="split">
+      <div><p class="eyebrow">安全與隱私</p><h2>你的秘密，不是網站的資料。</h2></div>
+      <ul><li>IPA 在本機選擇與計算雜湊，不上傳到本站。</li><li>密碼與 2FA 驗證碼不寫入檔案或日誌。</li><li>憑證、私鑰、token 與 Anisette 狀態必須存入裝置限定 Keychain。</li><li>任何遠端 Anisette 端點都會在登入前明確顯示。</li></ul>
+    </section>
+
+    <section class="panel compact"><p class="eyebrow">我們不提供</p><h2>沒有線上 IPA 商店，也不替你找 App。</h2><p>SideNeko 只處理你自己選擇且有權使用的 IPA；不自動下載任意第三方 App，不散布 SideInstaller IPA、siboot 二進位檔或 Apple 簽署材料。</p></section>
+  </main>
+  <footer><span>SideNeko © 2026 thanking157</span><span>GNU GPL v3.0・Sideloading, the neko way.</span></footer>
+</body>
+</html>
