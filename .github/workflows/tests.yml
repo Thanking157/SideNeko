@@ -26,3 +26,35 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Rust FFI 測試
         run: cargo test --locked --features engine
+
+  full-rust:
+    name: 完整簽署與裝置核心
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - name: 執行完整 Rust 測試
+        working-directory: SideNekoFull
+        run: ./scripts/test-rust.sh
+
+  bootstrap:
+    name: SideNeko bootstrap
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - name: 測試 Open Minis 安裝流程
+        working-directory: SideNekoBootstrap/minis
+        run: cargo test --locked
+      - name: 測試 rootshell 配對流程
+        working-directory: SideNekoBootstrap/rootshell
+        run: cargo test --locked
+
+  translations:
+    name: 翻譯完整性
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v5
+      - name: 檢查翻譯鍵與格式
+        working-directory: SideNekoFull
+        run: python3 scripts/check_translations.py
