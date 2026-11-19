@@ -26,11 +26,13 @@ SideInstaller's compiled IPA.
 non-commercial source-code derivatives if the copyright notice and licence are
 included and changes are clearly marked. It prohibits distribution of compiled
 versions/IPA files without written authorisation. Before copying any upstream
-source into SideNeko, preserve that notice, include the complete licence, mark
-the changed files, and obtain a maintainer review. This repository currently
-contains no copied upstream implementation.
+source into SideNeko, preserve that notice, include the complete licence and
+mark the changed files. The user later supplied the 2.1.0 source archive; it is
+now incorporated under `SideNekoFull/` with the upstream license, attribution,
+change record and per-file headers on modified integration files.
 
-No licence file was found in the reviewed `siboot` tree. Public source visibility
-alone is not permission to copy, modify, compile, or redistribute it. SideNeko
-therefore uses its documented workflow only as behavioural research and does
-not vendor, run, or repackage siboot code or binaries.
+No standalone licence file was found in the reviewed `siboot` tree, but both
+package manifests explicitly declare `license = "MIT"`. After the user supplied
+the source snapshot, SideNeko incorporated and modified those two packages in
+`SideNekoBootstrap/`, retained the MIT terms and provenance, and compiled its
+own renamed artifacts. No upstream-built siboot binary is copied or rehosted.

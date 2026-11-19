@@ -1,31 +1,36 @@
-# Test plan
+# SideNeko v1.0 Beta test status
 
-## Completed on development Mac
+## Completed on the development Mac
 
-- `swift test` validates incremental checksum reading, ZIP-signature and
-  extension refusal, expiry status, and the no-remote-download policy.
-- English and Traditional Chinese resources are compiled into the app bundle.
-- `cargo test --locked --features engine` passes three FFI capability and
-  secret-surface tests with the pinned isideload dependency linked.
-- The SwiftUI shell compiles for both generic iOS Simulator and generic physical
-  iOS destinations with code signing disabled under Xcode 27.2.
-- The device-only Keychain implementation compiles for both destinations; live
-  add/read/delete testing remains part of physical-device verification.
-- The static GitHub Pages site keeps its installation action disabled while
-  `docs/release.json` reports that no verified release is available.
-- UI launch testing was attempted, but this Mac currently has no installed iOS
-  Simulator runtime or device entry. This is recorded as unverified rather than
-  reported as a pass.
+- The complete Rust signing/device suite passes: 68 SideNeko core, 31 idevice,
+  58 isideload and 24 apple-codesign-quick tests (181 total).
+- SideNeko bootstrap passes 108 tests with one true-device integration case
+  skipped; the rootshell pairing module passes all 16 tests.
+- The renamed ARM64 Linux bootstrap and WASI pairing module build from the
+  tracked source, and their published SHA-256 files match.
+- Xcode 27.2 clean-builds the unsigned SideNeko 1.0.0 Release for a generic
+  arm64 iOS device with the SideNekoFFI library and Live Activity extension.
+- The Debug app also builds for the generic arm64 iOS Simulator destination.
+- The generated IPA is a valid ZIP containing `Payload/SideNeko.app`, bundle ID
+  `io.thanking157.sideneko`, version 1.0.0 and an arm64 executable.
+- The localization checker finds all 807 Traditional Chinese and English keys
+  represented; no duplicate keys or placeholder mismatches exist. Some
+  non-primary translations remain incomplete.
+- The Mac currently has no installed iOS Simulator runtime, so simulator UI
+  tests could not run. This is recorded as unverified, not reported as a pass.
 
-## Still required before any public release
+## Still required on the intended iPhone/iPad
 
-- Build and run on the intended iPhone 17 / iOS 27.3 and an iPad.
-- VoiceOver, Dynamic Type, Chinese and English layout checks.
-- Verify a document-picked local IPA never leaves the device.
-- Independent security review for any Apple-auth, Anisette, signing, pairing,
-  VPN, or installation proposal.
-- Obtain written permission before any SideInstaller compiled derivative or
-  siboot source/binary redistribution is ever proposed. Neither is included.
+- Run the complete website → SideNeko bootstrap → sign → install flow on the
+  intended iPhone 17 / iOS 27.3, including Apple 2FA and first trust.
+- Verify initial pairing, LocalDevVPN reconnect, imported IPA signing,
+  refresh, expiry display, SideStore/LiveContainer quick install and account
+  deletion with the account owner present.
+- Test an iPad, VoiceOver, Dynamic Type, Traditional Chinese and English
+  layouts.
+- Obtain any permission needed before publicly distributing a compiled
+  SideInstaller-derived app. The local IPA is built from the modified source;
+  no official SideInstaller IPA is copied.
 
-No test plan can promise that all devices will install successfully or that a
-free signing certificate will never expire/revoke.
+No test plan can promise success on every device or that a free certificate
+will never expire or be revoked.

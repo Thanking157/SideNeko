@@ -2,27 +2,33 @@
 
 ## Current code inventory
 
-As of 2026-11-19, **no SideInstaller or siboot source code is copied, vendored,
-or compiled into SideNeko**. SideNeko's Swift source files and FFI integration
-code are original project code and carry the thanking157 header.
+As of 2026-11-19, SideNeko incorporates a modified source snapshot of
+SideInstaller 2.1.0 under `SideNekoFull/`. The complete upstream custom
+license is preserved as `SideNekoFull/SIDEINSTALLER_LICENSE.md`, provenance
+and changes are recorded in `SideNekoFull/ORIGIN.md`, and modified files
+carry a SideInstaller/FrizzleM derivative header.
 
-The project documentation refers to these upstream projects for research and
-compatibility planning only:
+Upstream projects:
 
 - SideInstaller by FrizzleM: <https://github.com/FrizzleM/SideInstaller>
 - siboot by FrizzleM: <https://github.com/FrizzleM/siboot>
 
-Before adding any third-party source, record the exact repository, commit,
-file, copyright holder, license, local modifications, and compatibility finding
-here. Non-commercial use alone does not erase attribution, redistribution, or
-license-combination requirements.
+No SideInstaller official IPA is included or mirrored.
+
+`SideNekoBootstrap/` incorporates and modifies the `minis` and `rootshell`
+source from the supplied siboot 0.19.1 snapshot. Its two Cargo package
+manifests identify the source as MIT licensed. The exact source provenance,
+changes and retained MIT terms are recorded in `SideNekoBootstrap/ORIGIN.md`
+and `SideNekoBootstrap/LICENSE-MIT`. SideNeko builds and publishes its own
+renamed bootstrap artifacts; it does not copy or rehost upstream-built
+binaries.
 
 ## Integrated dependency
 
-`nab138/isideload` 0.5.2, resolved from commit
-`326e56229d0727cb6e7b34c8cf03e37e2cd3e17d`, is pinned by
-`SigningCore/Cargo.lock` and linked into the locally generated
-`SideNekoSigningCore.xcframework`. It is copyright 2025 nab138 and MIT licensed.
-Its public API is not represented as SideNeko original work. Release packaging
-must include the MIT licence text and the notices for every locked transitive
-dependency. See `docs/SIGNING_ENGINE_REVIEW.md`.
+The full implementation under `SideNekoFull/rust-core/vendor/` includes pinned,
+locally modified copies of `idevice` 0.1.63 (MIT), `isideload` 0.2.22 (MIT)
+and `apple-codesign-quick` 0.1.0 (LGPL-2.1-or-later). Their package manifests,
+README provenance and source-level change notes are retained. Their APIs and
+implementation are not represented as original SideNeko work. A compiled
+release must preserve the applicable licence texts and notices for these and
+their locked transitive dependencies. See `docs/SIGNING_ENGINE_REVIEW.md`.

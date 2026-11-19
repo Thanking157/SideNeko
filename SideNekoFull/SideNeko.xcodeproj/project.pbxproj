@@ -1,0 +1,794 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0196FD6AC7D7B10BCE4C06BF /* JapaneseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DC30F6443EA7EC86DCB /* JapaneseStrings.swift */; };
+		02B6A8CAABDD6923BC37FC38 /* InstallActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA64140A21CF351E13E2AD /* InstallActivity.swift */; };
+		050B0318D501311826325453 /* KeepAlive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768929FD4C5AC0028EF0703 /* KeepAlive.swift */; };
+		0553720748E3204F009FF555 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9BC6C618E2775CE034C0BB /* Localization.swift */; };
+		0E98CC46B199E72F061CD7B8 /* SpanishStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E580E764070B52062009B /* SpanishStrings.swift */; };
+		11A124B6371BB56082C125C5 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6CF3DDC112B80677AEC795 /* Engine.swift */; };
+		13941F235FA433903B825D09 /* RoutePlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B369C6F2B4C144FC62990 /* RoutePlanner.swift */; };
+		1578475B004307CBA87A76C9 /* CertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9AFE8067EC7B8DDFAC90A /* CertsView.swift */; };
+		16555B0393584BF225FC1DA8 /* DeviceConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9BADABED88BBD6F8FE5FD1 /* DeviceConnection.swift */; };
+		1682081117403369FE560472 /* LogRedactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B31D6C05C05883466840 /* LogRedactor.swift */; };
+		1CA38018E438EAB693D6A560 /* InstallActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B623D1A6A3BCD7FBE21F9 /* InstallActivityAttributes.swift */; };
+		27A654B6FDD7222803E22CA3 /* AnisetteServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FB070394FCC685E8C2CA3 /* AnisetteServers.swift */; };
+		2980ED4BB3463E0E6C2EE035 /* TurkishStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E3633BD80A87E58B96199 /* TurkishStrings.swift */; };
+		2B3F69216E1C955E6DCDCCA5 /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5BECE6343BBB429DC975 /* SoundEffects.swift */; };
+		37D25275BB8B9DDA677BA05D /* LiveContainerCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71555707711AA8B5948D3BDD /* LiveContainerCertificate.swift */; };
+		393E3E02AADB2F97B74487B6 /* LogRedactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B838184238D6575FD56F2F1 /* LogRedactorTests.swift */; };
+		39C5CA6473105B3F241F236C /* PairingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F398203EFBE89200A53643 /* PairingManager.swift */; };
+		3A7251E3BAC8BDD62093F984 /* PairingTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C1C7329045B25F41A5D86 /* PairingTargets.swift */; };
+		3ACA5DB316F3AAE03BB5F74E /* PairingLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098594F591891193848AEB4 /* PairingLiveActivity.swift */; };
+		4891997D88AB0428410D150C /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD379D1A5B4C75B1D5C17B /* UpdateChecker.swift */; };
+		5106C3BEC9FDDAE5545F9917 /* SideNekoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB1D5A0B5E215EDA11776F /* SideNekoApp.swift */; };
+		5560CB907AC052C776D97DFE /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DF087CF971E85391958ADD /* LogStore.swift */; };
+		5FAB1B9DADF94F3FF8BE5A67 /* SigningTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12817133E6F924871FBD055 /* SigningTeams.swift */; };
+		6C4FBF099F37BC931FD1FE39 /* SideBySideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5932EBD99E8320D45070FD /* SideBySideView.swift */; };
+		6ECAFD5C8508C701073DFB0E /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97A30EAC35C49C8F5CD5B9 /* AccountStore.swift */; };
+		6F41AA3B224AA6CA0C781BD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F34C0961FB03156E5AF8C5 /* ContentView.swift */; };
+		6FE31F81514996673E862EBE /* PortugueseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782DD78F33E1F9F2C57FCF2 /* PortugueseStrings.swift */; };
+		6FE730E5D280B99587D93C39 /* ItalianStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498DB6A405B782F0D7572B3 /* ItalianStrings.swift */; };
+		7B2257CA5CA9ED12E4D210A0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4D4D4213716A86ADB045F2 /* AboutView.swift */; };
+		7CD142E3C52511730760AB7F /* InstallActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B623D1A6A3BCD7FBE21F9 /* InstallActivityAttributes.swift */; };
+		7D2132B1CBF8AA12BA0E716A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4E355DC4CA197F0E5E4E08 /* Theme.swift */; };
+		822AC992166D5DC2FCA8D751 /* ChineseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23756C4FAF3498215847BD79 /* ChineseStrings.swift */; };
+		829182AAEAC7B31CC072FF21 /* ProblemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C88E1B3E21CA412DA60418 /* ProblemReport.swift */; };
+		8415C1A36038BE7ADDDD30C9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A641F56C3C83CF70B26537 /* SettingsView.swift */; };
+		868F08218889D720EFDE5117 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED51556219E2A39D1C2E63 /* LocationView.swift */; };
+		92BE55507291372EECAEED9A /* PairingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929678A794F4F7EFFFCD9F14 /* PairingNotification.swift */; };
+		A949C7976CD0E1C1A4D72EF2 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE2F22C01267E21485D51A /* AppsView.swift */; };
+		A9D19D94CD48DC1DDAE53903 /* PairingActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9B01687AF6116BB2832F7 /* PairingActivityAttributes.swift */; };
+		AB2AC71ED39675616FDACE66 /* AccountViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0820CAD18918387F0AFAF06 /* AccountViews.swift */; };
+		B199EF28B18B2629053DE1AC /* PairingActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A383FE2E3957F7EAABB02 /* PairingActivityWidget.swift */; };
+		B422342868304029968F5916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A378C03526168A0D9158A8 /* Assets.xcassets */; };
+		B53C0A2F180F7FC437AC3B0F /* LocalNetworkAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5DC94A90335748F754C /* LocalNetworkAuthorization.swift */; };
+		B5685F540CDDADC3E15B5F0B /* CertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CDA16FE0F2AF1ACA68FB8 /* CertManager.swift */; };
+		BC0F19E65BBE072F877A7B8A /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9E0209AAB1A35F5CC6394 /* PairingView.swift */; };
+		BE621C36324B4B8709F131E7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DD2B0C97CB43FE1A4CCC0 /* RootView.swift */; };
+		C31D39A18CE70E7F29E09DC5 /* SideNekoFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57B5308C0C90270C300E15E /* SideNekoFFI.xcframework */; };
+		C5F03BDCCE88890CA2AC2128 /* PairingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04774CE507A3794F8CA2BF39 /* PairingController.swift */; };
+		C61FADD3F46E5FAF401954FE /* VietnameseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9892F1F5EBB802B664AFDEC /* VietnameseStrings.swift */; };
+		CD6642313725F56DD554321E /* KoreanStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856CC129A74DA2B0C214E22 /* KoreanStrings.swift */; };
+		D3498193259C07CE5431B98A /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE557C56B77D540130CB793 /* NetworkStatus.swift */; };
+		D5F763D43CECE822818F5C14 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9458CB49BD0C2B5C44FA8 /* DeepLink.swift */; };
+		D90AD34E33E5E4DB670E2A47 /* TraditionalChineseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827DADBA04D29AA2EED95E7 /* TraditionalChineseStrings.swift */; };
+		D9FBB80E260C5B82C094C0FA /* SideNekoLiveActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CA1713D2E64D6464AB3C9FFD /* SideNekoLiveActivity.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DAF851BCCA284395362A7F9E /* FrenchStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1449C8DCEC7A64501183AF /* FrenchStrings.swift */; };
+		DE345628FE1AC8C8E4B7F472 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787A4071F79895B135412EA5 /* WelcomeView.swift */; };
+		E4119247A78666F6E8C240C0 /* AppleSignInQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC857C7664B416FC85C589E /* AppleSignInQueue.swift */; };
+		EDD58FBFB67BCB342440FBD1 /* InstallActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0F2195757D3CBCED2F7FD /* InstallActivityWidget.swift */; };
+		F09922A6C01189111E7B3D8A /* SideStoreDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451D2DB0FF825126F57E2E0D /* SideStoreDownloader.swift */; };
+		F279B35197CA566914C96CA6 /* DownloadsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752A552FA8B9E2EF0675CDA /* DownloadsManager.swift */; };
+		F66D49ADF6D6662528F98AC2 /* EntitlementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF93B3096F4437D88DDE3D7 /* EntitlementsView.swift */; };
+		F869D209BE1EF1F5907044E2 /* ReportProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F8CFF0C1F66119E1650C0 /* ReportProblemView.swift */; };
+		F9B8BEE061B43C360D547961 /* PairingActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9B01687AF6116BB2832F7 /* PairingActivityAttributes.swift */; };
+		FDA808FFFFF19D69B9CB4F82 /* SigningTeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22BF99B6A506797F6EF1FA /* SigningTeamsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84ECA8B98C26493B1207E9CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB05F5DF6C8C82C52962B2E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59A1E8D52E225FA27B9B43F3;
+			remoteInfo = SideNekoLiveActivity;
+		};
+		9E57E9DC06B70ADF3A147B83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB05F5DF6C8C82C52962B2E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 041E43238BE2C2E6DC5E964C;
+			remoteInfo = SideNeko;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		918AF93E24EFD081875CA7DE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D9FBB80E260C5B82C094C0FA /* SideNekoLiveActivity.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		02A378C03526168A0D9158A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		032FB070394FCC685E8C2CA3 /* AnisetteServers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnisetteServers.swift; sourceTree = "<group>"; };
+		04774CE507A3794F8CA2BF39 /* PairingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingController.swift; sourceTree = "<group>"; };
+		06F9E0209AAB1A35F5CC6394 /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
+		073DD2B0C97CB43FE1A4CCC0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0782DD78F33E1F9F2C57FCF2 /* PortugueseStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortugueseStrings.swift; sourceTree = "<group>"; };
+		0D9BADABED88BBD6F8FE5FD1 /* DeviceConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConnection.swift; sourceTree = "<group>"; };
+		0E4D4D4213716A86ADB045F2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		0F4E355DC4CA197F0E5E4E08 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		23756C4FAF3498215847BD79 /* ChineseStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseStrings.swift; sourceTree = "<group>"; };
+		23DF087CF971E85391958ADD /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
+		2769C7CD6843BB18AEB1CC0C /* SideNeko.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SideNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A10B31D6C05C05883466840 /* LogRedactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRedactor.swift; sourceTree = "<group>"; };
+		2EE557C56B77D540130CB793 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		2F1449C8DCEC7A64501183AF /* FrenchStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchStrings.swift; sourceTree = "<group>"; };
+		41C88E1B3E21CA412DA60418 /* ProblemReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemReport.swift; sourceTree = "<group>"; };
+		44B9458CB49BD0C2B5C44FA8 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
+		451D2DB0FF825126F57E2E0D /* SideStoreDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideStoreDownloader.swift; sourceTree = "<group>"; };
+		47C9B01687AF6116BB2832F7 /* PairingActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingActivityAttributes.swift; sourceTree = "<group>"; };
+		4827DADBA04D29AA2EED95E7 /* TraditionalChineseStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalChineseStrings.swift; sourceTree = "<group>"; };
+		48AD379D1A5B4C75B1D5C17B /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
+		4CDB1D5A0B5E215EDA11776F /* SideNekoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNekoApp.swift; sourceTree = "<group>"; };
+		5768929FD4C5AC0028EF0703 /* KeepAlive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepAlive.swift; sourceTree = "<group>"; };
+		57C012A109A8F1C59EFE7DB2 /* SideNekoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SideNekoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5932EBD99E8320D45070FD /* SideBySideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBySideView.swift; sourceTree = "<group>"; };
+		61F398203EFBE89200A53643 /* PairingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingManager.swift; sourceTree = "<group>"; };
+		6B6CF3DDC112B80677AEC795 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		71555707711AA8B5948D3BDD /* LiveContainerCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContainerCertificate.swift; sourceTree = "<group>"; };
+		71831DC30F6443EA7EC86DCB /* JapaneseStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseStrings.swift; sourceTree = "<group>"; };
+		718C6EE8B17E83FF0B874E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		78549BB7145865649C066558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		787A4071F79895B135412EA5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7E4A383FE2E3957F7EAABB02 /* PairingActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingActivityWidget.swift; sourceTree = "<group>"; };
+		861B623D1A6A3BCD7FBE21F9 /* InstallActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallActivityAttributes.swift; sourceTree = "<group>"; };
+		87ED51556219E2A39D1C2E63 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		88A641F56C3C83CF70B26537 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8A9BC6C618E2775CE034C0BB /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		8B838184238D6575FD56F2F1 /* LogRedactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRedactorTests.swift; sourceTree = "<group>"; };
+		929678A794F4F7EFFFCD9F14 /* PairingNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingNotification.swift; sourceTree = "<group>"; };
+		A0AB5BECE6343BBB429DC975 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		AE22BF99B6A506797F6EF1FA /* SigningTeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningTeamsTests.swift; sourceTree = "<group>"; };
+		B0CE2F22C01267E21485D51A /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		B498DB6A405B782F0D7572B3 /* ItalianStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItalianStrings.swift; sourceTree = "<group>"; };
+		B89F8CFF0C1F66119E1650C0 /* ReportProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemView.swift; sourceTree = "<group>"; };
+		B9892F1F5EBB802B664AFDEC /* VietnameseStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietnameseStrings.swift; sourceTree = "<group>"; };
+		BC0E3633BD80A87E58B96199 /* TurkishStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkishStrings.swift; sourceTree = "<group>"; };
+		C6F34C0961FB03156E5AF8C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA1713D2E64D6464AB3C9FFD /* SideNekoLiveActivity.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SideNekoLiveActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC5B369C6F2B4C144FC62990 /* RoutePlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanner.swift; sourceTree = "<group>"; };
+		CFC857C7664B416FC85C589E /* AppleSignInQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInQueue.swift; sourceTree = "<group>"; };
+		D4D0F2195757D3CBCED2F7FD /* InstallActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallActivityWidget.swift; sourceTree = "<group>"; };
+		D57B5308C0C90270C300E15E /* SideNekoFFI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SideNekoFFI.xcframework; sourceTree = "<group>"; };
+		E0820CAD18918387F0AFAF06 /* AccountViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViews.swift; sourceTree = "<group>"; };
+		E098594F591891193848AEB4 /* PairingLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingLiveActivity.swift; sourceTree = "<group>"; };
+		E12817133E6F924871FBD055 /* SigningTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningTeams.swift; sourceTree = "<group>"; };
+		E45CDA16FE0F2AF1ACA68FB8 /* CertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertManager.swift; sourceTree = "<group>"; };
+		E6F9AFE8067EC7B8DDFAC90A /* CertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertsView.swift; sourceTree = "<group>"; };
+		E71E580E764070B52062009B /* SpanishStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishStrings.swift; sourceTree = "<group>"; };
+		EAF93B3096F4437D88DDE3D7 /* EntitlementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementsView.swift; sourceTree = "<group>"; };
+		F4EA64140A21CF351E13E2AD /* InstallActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallActivity.swift; sourceTree = "<group>"; };
+		F752A552FA8B9E2EF0675CDA /* DownloadsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsManager.swift; sourceTree = "<group>"; };
+		F856CC129A74DA2B0C214E22 /* KoreanStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanStrings.swift; sourceTree = "<group>"; };
+		FB98C5DC94A90335748F754C /* LocalNetworkAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkAuthorization.swift; sourceTree = "<group>"; };
+		FE7C1C7329045B25F41A5D86 /* PairingTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingTargets.swift; sourceTree = "<group>"; };
+		FF97A30EAC35C49C8F5CD5B9 /* AccountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79F8F49BF4F0B1D8FAD5E0A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31D39A18CE70E7F29E09DC5 /* SideNekoFFI.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2807F9B2FA19453D55FD966A /* ios-tests */ = {
+			isa = PBXGroup;
+			children = (
+				8B838184238D6575FD56F2F1 /* LogRedactorTests.swift */,
+				AE22BF99B6A506797F6EF1FA /* SigningTeamsTests.swift */,
+			);
+			path = "ios-tests";
+			sourceTree = "<group>";
+		};
+		4C6E189C576C6EF3D22DB106 /* ios-live-activity */ = {
+			isa = PBXGroup;
+			children = (
+				78549BB7145865649C066558 /* Info.plist */,
+				D4D0F2195757D3CBCED2F7FD /* InstallActivityWidget.swift */,
+				7E4A383FE2E3957F7EAABB02 /* PairingActivityWidget.swift */,
+			);
+			path = "ios-live-activity";
+			sourceTree = "<group>";
+		};
+		5B80FF6989AD2E48E392B254 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2769C7CD6843BB18AEB1CC0C /* SideNeko.app */,
+				CA1713D2E64D6464AB3C9FFD /* SideNekoLiveActivity.appex */,
+				57C012A109A8F1C59EFE7DB2 /* SideNekoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9924D35469AC2563716395A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D57B5308C0C90270C300E15E /* SideNekoFFI.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE490A369607748DA8968518 = {
+			isa = PBXGroup;
+			children = (
+				FEEEA403F59244B4D558645C /* ios-app */,
+				4C6E189C576C6EF3D22DB106 /* ios-live-activity */,
+				2807F9B2FA19453D55FD966A /* ios-tests */,
+				B9924D35469AC2563716395A /* Frameworks */,
+				5B80FF6989AD2E48E392B254 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEEEA403F59244B4D558645C /* ios-app */ = {
+			isa = PBXGroup;
+			children = (
+				0E4D4D4213716A86ADB045F2 /* AboutView.swift */,
+				FF97A30EAC35C49C8F5CD5B9 /* AccountStore.swift */,
+				E0820CAD18918387F0AFAF06 /* AccountViews.swift */,
+				032FB070394FCC685E8C2CA3 /* AnisetteServers.swift */,
+				CFC857C7664B416FC85C589E /* AppleSignInQueue.swift */,
+				B0CE2F22C01267E21485D51A /* AppsView.swift */,
+				02A378C03526168A0D9158A8 /* Assets.xcassets */,
+				E45CDA16FE0F2AF1ACA68FB8 /* CertManager.swift */,
+				E6F9AFE8067EC7B8DDFAC90A /* CertsView.swift */,
+				23756C4FAF3498215847BD79 /* ChineseStrings.swift */,
+				C6F34C0961FB03156E5AF8C5 /* ContentView.swift */,
+				44B9458CB49BD0C2B5C44FA8 /* DeepLink.swift */,
+				0D9BADABED88BBD6F8FE5FD1 /* DeviceConnection.swift */,
+				F752A552FA8B9E2EF0675CDA /* DownloadsManager.swift */,
+				6B6CF3DDC112B80677AEC795 /* Engine.swift */,
+				EAF93B3096F4437D88DDE3D7 /* EntitlementsView.swift */,
+				2F1449C8DCEC7A64501183AF /* FrenchStrings.swift */,
+				718C6EE8B17E83FF0B874E76 /* Info.plist */,
+				F4EA64140A21CF351E13E2AD /* InstallActivity.swift */,
+				861B623D1A6A3BCD7FBE21F9 /* InstallActivityAttributes.swift */,
+				B498DB6A405B782F0D7572B3 /* ItalianStrings.swift */,
+				71831DC30F6443EA7EC86DCB /* JapaneseStrings.swift */,
+				5768929FD4C5AC0028EF0703 /* KeepAlive.swift */,
+				F856CC129A74DA2B0C214E22 /* KoreanStrings.swift */,
+				71555707711AA8B5948D3BDD /* LiveContainerCertificate.swift */,
+				8A9BC6C618E2775CE034C0BB /* Localization.swift */,
+				FB98C5DC94A90335748F754C /* LocalNetworkAuthorization.swift */,
+				87ED51556219E2A39D1C2E63 /* LocationView.swift */,
+				2A10B31D6C05C05883466840 /* LogRedactor.swift */,
+				23DF087CF971E85391958ADD /* LogStore.swift */,
+				2EE557C56B77D540130CB793 /* NetworkStatus.swift */,
+				47C9B01687AF6116BB2832F7 /* PairingActivityAttributes.swift */,
+				04774CE507A3794F8CA2BF39 /* PairingController.swift */,
+				E098594F591891193848AEB4 /* PairingLiveActivity.swift */,
+				61F398203EFBE89200A53643 /* PairingManager.swift */,
+				929678A794F4F7EFFFCD9F14 /* PairingNotification.swift */,
+				FE7C1C7329045B25F41A5D86 /* PairingTargets.swift */,
+				06F9E0209AAB1A35F5CC6394 /* PairingView.swift */,
+				0782DD78F33E1F9F2C57FCF2 /* PortugueseStrings.swift */,
+				41C88E1B3E21CA412DA60418 /* ProblemReport.swift */,
+				B89F8CFF0C1F66119E1650C0 /* ReportProblemView.swift */,
+				073DD2B0C97CB43FE1A4CCC0 /* RootView.swift */,
+				CC5B369C6F2B4C144FC62990 /* RoutePlanner.swift */,
+				88A641F56C3C83CF70B26537 /* SettingsView.swift */,
+				5F5932EBD99E8320D45070FD /* SideBySideView.swift */,
+				4CDB1D5A0B5E215EDA11776F /* SideNekoApp.swift */,
+				451D2DB0FF825126F57E2E0D /* SideStoreDownloader.swift */,
+				E12817133E6F924871FBD055 /* SigningTeams.swift */,
+				A0AB5BECE6343BBB429DC975 /* SoundEffects.swift */,
+				E71E580E764070B52062009B /* SpanishStrings.swift */,
+				0F4E355DC4CA197F0E5E4E08 /* Theme.swift */,
+				4827DADBA04D29AA2EED95E7 /* TraditionalChineseStrings.swift */,
+				BC0E3633BD80A87E58B96199 /* TurkishStrings.swift */,
+				48AD379D1A5B4C75B1D5C17B /* UpdateChecker.swift */,
+				B9892F1F5EBB802B664AFDEC /* VietnameseStrings.swift */,
+				787A4071F79895B135412EA5 /* WelcomeView.swift */,
+			);
+			path = "ios-app";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		041E43238BE2C2E6DC5E964C /* SideNeko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9298016ED883A654504F3138 /* Build configuration list for PBXNativeTarget "SideNeko" */;
+			buildPhases = (
+				6A22AB49681ABFBFAC3A535F /* Sources */,
+				D4F6A826237BA300C494A649 /* Resources */,
+				79F8F49BF4F0B1D8FAD5E0A4 /* Frameworks */,
+				918AF93E24EFD081875CA7DE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB41C9F9A9272F93893FF0FD /* PBXTargetDependency */,
+			);
+			name = SideNeko;
+			packageProductDependencies = (
+			);
+			productName = SideNeko;
+			productReference = 2769C7CD6843BB18AEB1CC0C /* SideNeko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E25980F3514B5B4459F00FF /* SideNekoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DC675EADCB2516C977C3516 /* Build configuration list for PBXNativeTarget "SideNekoTests" */;
+			buildPhases = (
+				FDFFEB66D316979DB244C246 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD3A3F71722986E0D14F1521 /* PBXTargetDependency */,
+			);
+			name = SideNekoTests;
+			packageProductDependencies = (
+			);
+			productName = SideNekoTests;
+			productReference = 57C012A109A8F1C59EFE7DB2 /* SideNekoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59A1E8D52E225FA27B9B43F3 /* SideNekoLiveActivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45256D0BDA4972C865DCD72 /* Build configuration list for PBXNativeTarget "SideNekoLiveActivity" */;
+			buildPhases = (
+				BD1198B942AD7B29C451C88D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SideNekoLiveActivity;
+			packageProductDependencies = (
+			);
+			productName = SideNekoLiveActivity;
+			productReference = CA1713D2E64D6464AB3C9FFD /* SideNekoLiveActivity.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB05F5DF6C8C82C52962B2E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					041E43238BE2C2E6DC5E964C = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					0E25980F3514B5B4459F00FF = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					59A1E8D52E225FA27B9B43F3 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7069472468AFB1E25ED28ECC /* Build configuration list for PBXProject "SideNeko" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CE490A369607748DA8968518;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5B80FF6989AD2E48E392B254 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				041E43238BE2C2E6DC5E964C /* SideNeko */,
+				0E25980F3514B5B4459F00FF /* SideNekoTests */,
+				59A1E8D52E225FA27B9B43F3 /* SideNekoLiveActivity */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4F6A826237BA300C494A649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B422342868304029968F5916 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A22AB49681ABFBFAC3A535F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2257CA5CA9ED12E4D210A0 /* AboutView.swift in Sources */,
+				6ECAFD5C8508C701073DFB0E /* AccountStore.swift in Sources */,
+				AB2AC71ED39675616FDACE66 /* AccountViews.swift in Sources */,
+				27A654B6FDD7222803E22CA3 /* AnisetteServers.swift in Sources */,
+				E4119247A78666F6E8C240C0 /* AppleSignInQueue.swift in Sources */,
+				A949C7976CD0E1C1A4D72EF2 /* AppsView.swift in Sources */,
+				B5685F540CDDADC3E15B5F0B /* CertManager.swift in Sources */,
+				1578475B004307CBA87A76C9 /* CertsView.swift in Sources */,
+				822AC992166D5DC2FCA8D751 /* ChineseStrings.swift in Sources */,
+				6F41AA3B224AA6CA0C781BD0 /* ContentView.swift in Sources */,
+				D5F763D43CECE822818F5C14 /* DeepLink.swift in Sources */,
+				16555B0393584BF225FC1DA8 /* DeviceConnection.swift in Sources */,
+				F279B35197CA566914C96CA6 /* DownloadsManager.swift in Sources */,
+				11A124B6371BB56082C125C5 /* Engine.swift in Sources */,
+				F66D49ADF6D6662528F98AC2 /* EntitlementsView.swift in Sources */,
+				DAF851BCCA284395362A7F9E /* FrenchStrings.swift in Sources */,
+				02B6A8CAABDD6923BC37FC38 /* InstallActivity.swift in Sources */,
+				1CA38018E438EAB693D6A560 /* InstallActivityAttributes.swift in Sources */,
+				6FE730E5D280B99587D93C39 /* ItalianStrings.swift in Sources */,
+				0196FD6AC7D7B10BCE4C06BF /* JapaneseStrings.swift in Sources */,
+				050B0318D501311826325453 /* KeepAlive.swift in Sources */,
+				CD6642313725F56DD554321E /* KoreanStrings.swift in Sources */,
+				37D25275BB8B9DDA677BA05D /* LiveContainerCertificate.swift in Sources */,
+				B53C0A2F180F7FC437AC3B0F /* LocalNetworkAuthorization.swift in Sources */,
+				0553720748E3204F009FF555 /* Localization.swift in Sources */,
+				868F08218889D720EFDE5117 /* LocationView.swift in Sources */,
+				1682081117403369FE560472 /* LogRedactor.swift in Sources */,
+				5560CB907AC052C776D97DFE /* LogStore.swift in Sources */,
+				D3498193259C07CE5431B98A /* NetworkStatus.swift in Sources */,
+				F9B8BEE061B43C360D547961 /* PairingActivityAttributes.swift in Sources */,
+				C5F03BDCCE88890CA2AC2128 /* PairingController.swift in Sources */,
+				3ACA5DB316F3AAE03BB5F74E /* PairingLiveActivity.swift in Sources */,
+				39C5CA6473105B3F241F236C /* PairingManager.swift in Sources */,
+				92BE55507291372EECAEED9A /* PairingNotification.swift in Sources */,
+				3A7251E3BAC8BDD62093F984 /* PairingTargets.swift in Sources */,
+				BC0F19E65BBE072F877A7B8A /* PairingView.swift in Sources */,
+				6FE31F81514996673E862EBE /* PortugueseStrings.swift in Sources */,
+				829182AAEAC7B31CC072FF21 /* ProblemReport.swift in Sources */,
+				F869D209BE1EF1F5907044E2 /* ReportProblemView.swift in Sources */,
+				BE621C36324B4B8709F131E7 /* RootView.swift in Sources */,
+				13941F235FA433903B825D09 /* RoutePlanner.swift in Sources */,
+				8415C1A36038BE7ADDDD30C9 /* SettingsView.swift in Sources */,
+				6C4FBF099F37BC931FD1FE39 /* SideBySideView.swift in Sources */,
+				5106C3BEC9FDDAE5545F9917 /* SideNekoApp.swift in Sources */,
+				F09922A6C01189111E7B3D8A /* SideStoreDownloader.swift in Sources */,
+				5FAB1B9DADF94F3FF8BE5A67 /* SigningTeams.swift in Sources */,
+				2B3F69216E1C955E6DCDCCA5 /* SoundEffects.swift in Sources */,
+				0E98CC46B199E72F061CD7B8 /* SpanishStrings.swift in Sources */,
+				7D2132B1CBF8AA12BA0E716A /* Theme.swift in Sources */,
+				D90AD34E33E5E4DB670E2A47 /* TraditionalChineseStrings.swift in Sources */,
+				2980ED4BB3463E0E6C2EE035 /* TurkishStrings.swift in Sources */,
+				4891997D88AB0428410D150C /* UpdateChecker.swift in Sources */,
+				C61FADD3F46E5FAF401954FE /* VietnameseStrings.swift in Sources */,
+				DE345628FE1AC8C8E4B7F472 /* WelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1198B942AD7B29C451C88D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CD142E3C52511730760AB7F /* InstallActivityAttributes.swift in Sources */,
+				EDD58FBFB67BCB342440FBD1 /* InstallActivityWidget.swift in Sources */,
+				A9D19D94CD48DC1DDAE53903 /* PairingActivityAttributes.swift in Sources */,
+				B199EF28B18B2629053DE1AC /* PairingActivityWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDFFEB66D316979DB244C246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393E3E02AADB2F97B74487B6 /* LogRedactorTests.swift in Sources */,
+				FDA808FFFFF19D69B9CB4F82 /* SigningTeamsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD3A3F71722986E0D14F1521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 041E43238BE2C2E6DC5E964C /* SideNeko */;
+			targetProxy = 9E57E9DC06B70ADF3A147B83 /* PBXContainerItemProxy */;
+		};
+		DB41C9F9A9272F93893FF0FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59A1E8D52E225FA27B9B43F3 /* SideNekoLiveActivity */;
+			targetProxy = 84ECA8B98C26493B1207E9CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06D2E21DB466AB686BC7B321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2BA62AE1BB48630C3D064043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "ios-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E0B8B6E0D84734F2922E7B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "ios-live-activity/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko.LiveActivity;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47840E42AC7A1797E75805E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "ios-live-activity/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko.LiveActivity;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4EDC4DC122EAEF2ADA47E5F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A52F9CD9F7EA2E61A085229E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SideNeko.app/SideNeko";
+			};
+			name = Debug;
+		};
+		B84C0E7EA7F5F81132E6B03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SideNeko.app/SideNeko";
+			};
+			name = Release;
+		};
+		D6AB8BEE41967FE76923C3E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "ios-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = io.thanking157.sideneko;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7069472468AFB1E25ED28ECC /* Build configuration list for PBXProject "SideNeko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EDC4DC122EAEF2ADA47E5F5 /* Debug */,
+				06D2E21DB466AB686BC7B321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7DC675EADCB2516C977C3516 /* Build configuration list for PBXNativeTarget "SideNekoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A52F9CD9F7EA2E61A085229E /* Debug */,
+				B84C0E7EA7F5F81132E6B03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9298016ED883A654504F3138 /* Build configuration list for PBXNativeTarget "SideNeko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BA62AE1BB48630C3D064043 /* Debug */,
+				D6AB8BEE41967FE76923C3E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F45256D0BDA4972C865DCD72 /* Build configuration list for PBXNativeTarget "SideNekoLiveActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E0B8B6E0D84734F2922E7B4 /* Debug */,
+				47840E42AC7A1797E75805E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB05F5DF6C8C82C52962B2E4 /* Project object */;
+}

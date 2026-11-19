@@ -1,10 +1,11 @@
 {
-  "available": true,
+  "available": false,
   "channel": "development",
-  "version": "v0.1.0-beta",
-  "installURL": "https://sideinstaller.net/open.html?url=https%3A%2F%2Fgithub.com%2FThanking157%2FSideNeko%2Freleases%2Fdownload%2Fv0.1.0-beta%2FSideNeko-v0.1.0-beta.ipa",
-  "downloadURL": "https://github.com/Thanking157/SideNeko/releases/download/v0.1.0-beta/SideNeko-v0.1.0-beta.ipa",
-  "sha256": "297968ac4799e13806ef218c50697662e02ac2a7ee78b5861876c2a6e980f078",
-  "minimumOS": "17.0",
-  "updatedAt": "2026-11-19"
+  "version": "v1.0.0-beta",
+  "installURL": null,
+  "bootstrapCommand": "wget -qO- https://thanking157.github.io/SideNeko/bootstrap.sh | sh",
+  "downloadURL": null,
+  "sha256": null,
+  "minimumOS": "27.0",
+  "updatedAt": "2026-11-20"
 }

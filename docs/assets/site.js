@@ -23,10 +23,10 @@ fetch("release.json", { cache: "no-store" })
   .then((release) => {
     if (release.available && release.installURL) {
       installButton.href = release.installURL;
-      installButton.textContent = `用 SideInstaller 安裝 ${release.version}`;
-      statusElement.textContent = `目前是 ${release.version} 測試版，遇到 Bug 很正常 w`;
+      installButton.textContent = `開始安裝 SideNeko ${release.version}`;
+      statusElement.textContent = `目前是 ${release.version} 測試版；會直接簽署並安裝 SideNeko w`;
     } else {
-      statusElement.textContent = "v0.1 開發測試版準備中：目前可先看原始碼與安裝流程 awa";
+      statusElement.textContent = "v1.0.0 Beta 準備中：目前可先看原始碼與安裝流程 awa";
     }
   })
   .catch(() => { statusElement.textContent = "版本狀態暫時讀不到 @@"; });

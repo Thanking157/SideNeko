@@ -5,8 +5,9 @@
 `nab138/isideload` 0.5.2, commit
 `326e56229d0727cb6e7b34c8cf03e37e2cd3e17d`, was downloaded into the ignored
 `work/` directory for review. It is MIT licensed (copyright 2025 nab138), pinned
-by Cargo.lock, and now linked into the generated local XCFramework. SideNeko has
-not yet exposed credential, signing, or installation FFI entry points.
+by Cargo.lock, vendored with its notice, and linked into SideNekoFFI. SideNeko
+now exposes the credential, signing and provisioning entry points used by the
+v1.0 Beta UI.
 
 This is a cleaner candidate than copying SideInstaller because MIT permits
 combination with GPLv3 when its copyright and permission notice are retained.
@@ -20,13 +21,14 @@ with releases; the exact dependency graph remains pinned by Cargo.lock.
   than placing the plaintext password in an HTTP request.
 - The build must never enable `danger_debug`; that option accepts invalid TLS
   certificates.
-- The default remote Anisette endpoint is `https://ani.iloader.app`. Its
+- The bundled remote Anisette endpoint is `https://new.ani.sidestore.io`. Its
   operator, retention policy, availability, TLS configuration, and exact data
   exchange still require independent review. SideNeko must visibly disclose
   the selected endpoint and cannot claim that the whole operation is local.
-- Anisette state and signing identities need an iOS Keychain-backed storage
-  implementation with device-only accessibility. The candidate's generic
-  desktop keyring or filesystem storage is not accepted as-is.
+- Saved passwords use the iOS Keychain with device-only accessibility.
+  Developer tokens, the signing key and Anisette identity remain in the app's
+  private Application Support directory, excluded from backups; this residual
+  filesystem exposure must be included in the threat model.
 - Logs must be allow-listed. Account identifiers, passwords, 2FA codes,
   developer tokens, anisette state, certificates, profiles, pairing files, and
   private keys must never be emitted.
@@ -50,6 +52,6 @@ Do not present Apple Account sign-in in the released UI until all of these pass:
    or bug reports.
 6. Apple terms/platform review and a user-facing privacy disclosure.
 
-Until the remaining gates pass, SideNeko's UI reports the dependency as linked
-but Apple Account, signing, and installation capabilities as unavailable rather
-than collecting credentials into an unverified path.
+The integration gates above have local build and unit-test coverage. Physical
+device validation, independent security review and Apple/platform-policy review
+remain required; the Beta must not describe those as completed.
