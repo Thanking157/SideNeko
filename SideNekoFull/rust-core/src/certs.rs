@@ -1,10 +1,18 @@
+/*
+ * Based on SideInstaller by FrizzleM
+ * Copyright (C) 2026 FrizzleM
+ * Modified and integrated into SideNeko by thanking157.
+ * Copyright (C) 2026 thanking157
+ * Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+ */
+
 //! Lists and revokes iOS development certificates via `isideload`'s
 //! `DeveloperSession` (developer portal only, no device). `si_cert_signin` opens
 //! a session on the team that signs (`team.rs`), `si_cert_list` returns its
 //! certificates as JSON,
 //! `si_cert_revoke` revokes one by serial number, `si_cert_import` signs with
 //! SideStore's certificate from then on, and `si_cert_export` writes the one
-//! SideInstaller signs with to a password-protected PKCS#12 archive.
+//! SideNeko signs with to a password-protected PKCS#12 archive.
 
 use std::ffi::{c_char, c_void};
 use std::panic::{catch_unwind, AssertUnwindSafe};
@@ -121,7 +129,7 @@ pub unsafe fn cert_signin(
 ) -> i32 {
     let apple_id = opt_str(apple_id, "");
     let password = opt_str(password, "");
-    let anisette_url = opt_str(anisette_url, "https://ani.sidestore.io");
+    let anisette_url = opt_str(anisette_url, "https://new.ani.sidestore.io");
     let storage_dir = opt_str(storage_dir, ".");
     let wanted = opt_str(team_id, "").trim().to_string();
     let twofa = make_2fa(twofa_cb, TwoFaCtx(ctx));

@@ -1,3 +1,11 @@
+/*
+ * Based on SideInstaller by FrizzleM
+ * Copyright (C) 2026 FrizzleM
+ * Modified and integrated into SideNeko by thanking157.
+ * Copyright (C) 2026 thanking157
+ * Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+ */
+
 //! Forwards `tracing` output, idevice's included, to a C callback supplied by
 //! Swift, so its protocol-level logs reach the app's console verbatim.
 //! Timestamps are left off, since the Swift console adds its own.

@@ -1,3 +1,11 @@
+/*
+ * Based on SideInstaller by FrizzleM
+ * Copyright (C) 2026 FrizzleM
+ * Modified and integrated into SideNeko by thanking157.
+ * Copyright (C) 2026 thanking157
+ * Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+ */
+
 //! This iPhone's RPPairing listener, looked for when it isn't on port 49152.
 //!
 //! The listener, remotepairingd's, takes whatever TCP port iOS hands it when it

@@ -1,4 +1,12 @@
-//! SideInstaller's Rust core: a C FFI shim over `idevice` and `isideload`.
+/*
+ * Based on SideInstaller by FrizzleM
+ * Copyright (C) 2026 FrizzleM
+ * Modified and integrated into SideNeko by thanking157.
+ * Copyright (C) 2026 thanking157
+ * Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+ */
+
+//! SideNeko's Rust core: a C FFI shim over `idevice` and `isideload`.
 //!
 //! No panic crosses the boundary, and every fallible call returns an error code
 //! plus a message the caller frees with `si_string_free`.

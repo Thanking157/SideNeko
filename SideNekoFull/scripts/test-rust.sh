@@ -1,4 +1,10 @@
 #!/bin/bash
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
 # Runs the Rust tests on this Mac: rust-core's own (2FA bridge, saved sessions,
 # .p12, pairing host, …), then those of the crates vendored under
 # rust-core/vendor/, whose local changes have tests of their own (idevice's

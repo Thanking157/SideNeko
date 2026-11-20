@@ -1,4 +1,10 @@
 #!/bin/bash
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
 # Builds SideNeko for the iOS simulator and runs its unit tests
 # (SideNekoTests, ios-tests/), as the pull-request workflow does: the Rust
 # library's simulator slice, an Xcode project generated from project.yml, then

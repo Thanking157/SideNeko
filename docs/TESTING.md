@@ -38,3 +38,6 @@
 
 No test plan can promise success on every device or that a free certificate
 will never expire or be revoked.
+
+The exact candidate IPA identity, public-release gates, asset name and release
+notes are tracked in `BETA_RELEASE.md`.

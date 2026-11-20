@@ -292,7 +292,7 @@ pub unsafe fn apple_signin(
 ) -> i32 {
     let apple_id = opt(apple_id, "");
     let password = opt(password, "");
-    let anisette_url = opt(anisette_url, "https://ani.sidestore.io");
+    let anisette_url = opt(anisette_url, "https://new.ani.sidestore.io");
     let machine_name = opt(machine_name, "SideNeko");
     let storage_dir = opt(storage_dir, ".");
     let wanted = opt(team_id, "").trim().to_string();

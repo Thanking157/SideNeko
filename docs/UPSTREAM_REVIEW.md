@@ -1,4 +1,4 @@
-# Upstream review — 2026-11-19
+# Upstream review — 2026-11-20
 
 ## Sources checked
 
@@ -22,14 +22,16 @@ SideInstaller's compiled IPA.
 
 ## Licence / attribution decision
 
-`FrizzleM/SideInstaller`'s `LICENSE.md` (copyright 2026 FrizzleM) allows
-non-commercial source-code derivatives if the copyright notice and licence are
-included and changes are clearly marked. It prohibits distribution of compiled
-versions/IPA files without written authorisation. Before copying any upstream
-source into SideNeko, preserve that notice, include the complete licence and
-mark the changed files. The user later supplied the 2.1.0 source archive; it is
-now incorporated under `SideNekoFull/` with the upstream license, attribution,
-change record and per-file headers on modified integration files.
+`FrizzleM/SideInstaller`'s live `LICENSE.md` (copyright 2026 FrizzleM) was
+checked again on 2026-11-20. It grants non-commercial copying, modification and
+incorporation, but grants distribution of the Software or derivative works only
+**in source code form**, with the copyright notice, licence and changes kept.
+It separately prohibits redistributing the copyright holder's official builds.
+No public permission for distributing a compiled derivative IPA was found, so
+SideNeko must obtain written authorisation before publishing that IPA. The user
+supplied the 2.1.0 source archive; it is incorporated under `SideNekoFull/` with
+the upstream licence, attribution, change record and per-file headers on
+modified integration files.
 
 No standalone licence file was found in the reviewed `siboot` tree, but both
 package manifests explicitly declare `license = "MIT"`. After the user supplied

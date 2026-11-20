@@ -1,3 +1,11 @@
+/*
+ * Based on SideInstaller by FrizzleM
+ * Copyright (C) 2026 FrizzleM
+ * Modified and integrated into SideNeko by thanking157.
+ * Copyright (C) 2026 thanking157
+ * Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+ */
+
 //! Reads the signing key out of the PKCS#12 archive SideStore exports with
 //! `sidestore://certificate`, in either shape it can come in.
 //!

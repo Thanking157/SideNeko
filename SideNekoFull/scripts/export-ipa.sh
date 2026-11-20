@@ -1,4 +1,10 @@
 #!/bin/bash
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
 # Build an unsigned SideNeko IPA from any branch, with the bundle id the
 # public IPA uses, for signers that take any bundle id (Feather and the like).
 #

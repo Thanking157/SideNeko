@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
 """Check that every string the app translates has a translation in each language.
 
 The app's copy is English, passed to `L("…")` (ios-app/Localization.swift), and
