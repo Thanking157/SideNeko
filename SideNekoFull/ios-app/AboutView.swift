@@ -86,6 +86,14 @@ struct AboutView: View {
                          title: L("Report a problem"),
                          detail: L("Opens a GitHub issue with this app's details, its log and crash logs."),
                          action: { showReport = true })
+                NavigationLink {
+                    LegalNoticesView()
+                } label: {
+                    AboutDestinationRow(systemImage: "doc.text.magnifyingglass",
+                                        title: L("Licences & acknowledgements"),
+                                        detail: L("Read the open-source licences included with this build."))
+                }
+                .buttonStyle(.plain, sound: .tick)
             }
         }
     }
@@ -165,6 +173,37 @@ struct AboutView: View {
 
     private func sectionTitle(_ title: String, systemImage: String) -> some View {
         SectionTitle(title: title, systemImage: systemImage)
+    }
+}
+
+/// A row that NavigationLink owns, matching the action/link rows beside it.
+private struct AboutDestinationRow: View {
+    var systemImage: String
+    var title: String
+    var detail: String
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: systemImage)
+                .font(.body)
+                .foregroundStyle(Theme.muted)
+                .frame(width: 24, alignment: .center)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.subheadline.weight(.medium))
+                Text(detail)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 8)
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.medium))
+                .foregroundStyle(Theme.muted)
+        }
+        .foregroundStyle(.primary)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(Rectangle())
     }
 }
 

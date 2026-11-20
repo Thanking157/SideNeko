@@ -70,6 +70,18 @@ for extension in "${extensions[@]}"; do
 done
 [ "$live_found" -eq 1 ] || fail "the packaged extension is not SideNekoLiveActivity"
 
+for legal_file in \
+  ThirdPartyNotices.txt \
+  RustDependencies.txt \
+  SideNeko-GPL-3.0.txt \
+  SideInstaller-LICENSE.txt \
+  Bootstrap-MIT.txt \
+  idevice-MIT.txt \
+  isideload-MIT.txt \
+  apple-codesign-quick-LGPL-2.1.txt; do
+  [ -s "$app/$legal_file" ] || fail "offline legal notice is missing or empty: $legal_file"
+done
+
 symbols="$(/usr/bin/nm -gU "$app/$executable" 2>/dev/null || true)"
 for symbol in _si_apple_signin _si_sign_ipa _si_pairing_run_host _idevice_pairing_file_read; do
   printf '%s\n' "$symbols" | grep -q " $symbol$" || fail "linked signing/device core is missing $symbol"
@@ -87,5 +99,6 @@ echo "  version: $version ($build)"
 echo "  executable: $executable (arm64)"
 echo "  extensions: ${#extensions[@]} (Live Activity present)"
 echo "  signing/device core: linked"
+echo "  offline legal notices: complete"
 echo "  credentials/provisioning: none"
 echo "  sha256: $sha"

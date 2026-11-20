@@ -1,0 +1,30 @@
+{{!
+  SideNeko
+
+  Copyright (C) 2026 thanking157
+
+  Original code and integration by thanking157.
+}}
+SIDENEKO RUST DEPENDENCY LICENCES
+=================================
+
+This file is generated from SideNekoFull/rust-core/Cargo.lock with
+cargo-about. It describes the Rust packages selected for the iOS device
+build. The SideNeko, incorporated SideInstaller, and bootstrap licences are
+included as separate documents in the app.
+
+PACKAGES
+--------
+{{#each crates}}
+{{package.name}} {{package.version}}
+Licence: {{license}}
+Source: {{#if package.repository}}{{package.repository}}{{else}}https://crates.io/crates/{{package.name}}{{/if}}
+
+{{/each}}
+LICENCE TEXTS
+-------------
+{{#each overview}}
+{{{name}}}
+{{{text}}}
+
+{{/each}}

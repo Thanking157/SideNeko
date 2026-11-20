@@ -3,6 +3,7 @@ name = "sideneko_ffi"
 version = "0.1.0"
 edition = "2021"
 description = "SideNeko C FFI for Apple sign-in, pairing, signing and installation"
+publish = false
 
 [lib]
 name = "sideneko_ffi"

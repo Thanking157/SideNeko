@@ -30,6 +30,10 @@ targets:
     platform: iOS
     sources:
       - path: ios-app
+        excludes:
+          - Legal
+      - path: ios-app/Legal
+        buildPhase: resources
     dependencies:
       - framework: SideNekoFFI.xcframework
         embed: false

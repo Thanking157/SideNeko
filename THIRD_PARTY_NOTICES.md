@@ -2,7 +2,7 @@
 
 ## Current code inventory
 
-As of 2026-11-19, SideNeko incorporates a modified source snapshot of
+As of 2026-11-20, SideNeko incorporates a modified source snapshot of
 SideInstaller 2.1.0 under `SideNekoFull/`. The complete upstream custom
 license is preserved as `SideNekoFull/SIDEINSTALLER_LICENSE.md`, provenance
 and changes are recorded in `SideNekoFull/ORIGIN.md`, and modified files
@@ -31,4 +31,7 @@ and `apple-codesign-quick` 0.1.0 (LGPL-2.1-or-later). Their package manifests,
 README provenance and source-level change notes are retained. Their APIs and
 implementation are not represented as original SideNeko work. A compiled
 release must preserve the applicable licence texts and notices for these and
-their locked transitive dependencies. See `docs/SIGNING_ENGINE_REVIEW.md`.
+their locked transitive dependencies. The app now bundles offline copies of
+the SideNeko, incorporated-source and direct dependency licences, plus a
+`cargo-about` report generated from the locked iOS Rust dependency graph. See
+`docs/SIGNING_ENGINE_REVIEW.md`.

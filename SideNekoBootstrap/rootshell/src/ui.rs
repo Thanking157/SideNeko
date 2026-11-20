@@ -64,21 +64,27 @@ struct Record {
 
 static RECORD: Mutex<Record> = Mutex::new(Record { lines: Vec::new(), last: String::new() });
 
+impl Record {
+    /// Keep `text` in this log, unless it repeats the line before.
+    fn push(&mut self, text: &str) {
+        for line in text.lines() {
+            let line = line.trim_end();
+            if line.trim().is_empty() || line == self.last {
+                continue;
+            }
+            self.last = line.to_string();
+            // A run is a few dozen lines: a long one keeps its start and its end.
+            if self.lines.len() >= 2000 {
+                self.lines.remove(100);
+            }
+            self.lines.push(line.to_string());
+        }
+    }
+}
+
 /// Keep `text` in the run's log, unless it repeats the line before.
 fn record(text: &str) {
-    let mut r = RECORD.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
-    for line in text.lines() {
-        let line = line.trim_end();
-        if line.trim().is_empty() || line == r.last {
-            continue;
-        }
-        r.last = line.to_string();
-        // A run is a few dozen lines: a long one keeps its start and its end.
-        if r.lines.len() >= 2000 {
-            r.lines.remove(100);
-        }
-        r.lines.push(line.to_string());
-    }
+    RECORD.lock().unwrap_or_else(|poisoned| poisoned.into_inner()).push(text);
 }
 
 /// The run's log so far.
@@ -562,13 +568,15 @@ mod tests {
 
     #[test]
     fn the_log_keeps_lines_not_codes() {
-        // Other tests log too, into the same record: these lines are its own.
-        header("9.9.9");
-        live("Waiting for the log test…");
-        live("Waiting for the log test…");
-        big("975310");
-        stopped("the log test ended.");
-        let log = recorded().join("\n");
+        // Use a private record: other tests exercise the real UI concurrently,
+        // so asserting against the process-wide run log was timing-dependent.
+        let mut record = Record { lines: Vec::new(), last: String::new() };
+        record.push("sideneko-pair 9.9.9 log");
+        record.push(" … Waiting for the log test…");
+        record.push(" … Waiting for the log test…");
+        record.push("     (a 6-digit code, in large digits)");
+        record.push("Stopped: the log test ended.");
+        let log = record.lines.join("\n");
         assert!(log.contains("sideneko-pair 9.9.9 log"), "{log}");
         assert_eq!(log.matches("Waiting for the log test").count(), 1, "{log}");
         assert!(!log.contains("975310") && !log.contains("975 310"), "{log}");

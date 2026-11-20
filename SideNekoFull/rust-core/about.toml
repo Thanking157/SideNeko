@@ -1,0 +1,36 @@
+# SideNeko
+#
+# Copyright (C) 2026 thanking157
+#
+# Original code and integration by thanking157.
+
+# cargo-about uses this allow-list to resolve every license expression in the
+# locked Rust dependency graph for the iOS device build. An entry here is not a
+# relicensing decision; the generated notice retains each crate's own terms.
+accepted = [
+  "0BSD",
+  "Apache-2.0",
+  "Apache-2.0 WITH LLVM-exception",
+  "BSD-2-Clause",
+  "BSD-3-Clause",
+  "CC0-1.0",
+  "CDLA-Permissive-2.0",
+  "ISC",
+  "LGPL-2.1-or-later",
+  "MIT",
+  "MIT-0",
+  "MPL-2.0",
+  "Unicode-3.0",
+  "Unlicense",
+  "Zlib",
+]
+
+targets = ["aarch64-apple-ios"]
+ignore-dev-dependencies = true
+ignore-build-dependencies = true
+
+[private]
+# The SideNeko FFI crate itself is covered by the project and incorporated
+# source licenses displayed separately in the app. This report is for its
+# third-party Rust dependency graph.
+ignore = true

@@ -11,6 +11,7 @@
 		02B6A8CAABDD6923BC37FC38 /* InstallActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA64140A21CF351E13E2AD /* InstallActivity.swift */; };
 		050B0318D501311826325453 /* KeepAlive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768929FD4C5AC0028EF0703 /* KeepAlive.swift */; };
 		0553720748E3204F009FF555 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9BC6C618E2775CE034C0BB /* Localization.swift */; };
+		05D0F585BE6D1757C94B3DD8 /* Bootstrap-MIT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3D4735163FAAD092D7C6D2B0 /* Bootstrap-MIT.txt */; };
 		0E98CC46B199E72F061CD7B8 /* SpanishStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E580E764070B52062009B /* SpanishStrings.swift */; };
 		11A124B6371BB56082C125C5 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6CF3DDC112B80677AEC795 /* Engine.swift */; };
 		13941F235FA433903B825D09 /* RoutePlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B369C6F2B4C144FC62990 /* RoutePlanner.swift */; };
@@ -26,9 +27,12 @@
 		39C5CA6473105B3F241F236C /* PairingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F398203EFBE89200A53643 /* PairingManager.swift */; };
 		3A7251E3BAC8BDD62093F984 /* PairingTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C1C7329045B25F41A5D86 /* PairingTargets.swift */; };
 		3ACA5DB316F3AAE03BB5F74E /* PairingLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098594F591891193848AEB4 /* PairingLiveActivity.swift */; };
+		4076C81EEEA60EEC2335F42A /* isideload-MIT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 385EB30AF195FC3C3FBF40DE /* isideload-MIT.txt */; };
 		4891997D88AB0428410D150C /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD379D1A5B4C75B1D5C17B /* UpdateChecker.swift */; };
 		5106C3BEC9FDDAE5545F9917 /* SideNekoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB1D5A0B5E215EDA11776F /* SideNekoApp.swift */; };
+		54696E385D5241AAF8B669DC /* SideInstaller-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D534F3CF00594B8517799CE1 /* SideInstaller-LICENSE.txt */; };
 		5560CB907AC052C776D97DFE /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DF087CF971E85391958ADD /* LogStore.swift */; };
+		56A1BE105AA392E0FC9C7DD6 /* LegalNoticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F6EAE42F2AB802B2A488F /* LegalNoticesView.swift */; };
 		5FAB1B9DADF94F3FF8BE5A67 /* SigningTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12817133E6F924871FBD055 /* SigningTeams.swift */; };
 		6C4FBF099F37BC931FD1FE39 /* SideBySideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5932EBD99E8320D45070FD /* SideBySideView.swift */; };
 		6ECAFD5C8508C701073DFB0E /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97A30EAC35C49C8F5CD5B9 /* AccountStore.swift */; };
@@ -40,22 +44,27 @@
 		7D2132B1CBF8AA12BA0E716A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4E355DC4CA197F0E5E4E08 /* Theme.swift */; };
 		822AC992166D5DC2FCA8D751 /* ChineseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23756C4FAF3498215847BD79 /* ChineseStrings.swift */; };
 		829182AAEAC7B31CC072FF21 /* ProblemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C88E1B3E21CA412DA60418 /* ProblemReport.swift */; };
+		82A2D5838560E2585E8BCC40 /* RustDependencies.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAC2D025486F50AD62D1C5ED /* RustDependencies.txt */; };
 		8415C1A36038BE7ADDDD30C9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A641F56C3C83CF70B26537 /* SettingsView.swift */; };
 		868F08218889D720EFDE5117 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED51556219E2A39D1C2E63 /* LocationView.swift */; };
 		92BE55507291372EECAEED9A /* PairingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929678A794F4F7EFFFCD9F14 /* PairingNotification.swift */; };
+		A0C0126FB8535E6EF952D9FA /* SideNeko-GPL-3.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 86B48D3F93388AF3AE91D4A6 /* SideNeko-GPL-3.0.txt */; };
 		A949C7976CD0E1C1A4D72EF2 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE2F22C01267E21485D51A /* AppsView.swift */; };
 		A9D19D94CD48DC1DDAE53903 /* PairingActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9B01687AF6116BB2832F7 /* PairingActivityAttributes.swift */; };
 		AB2AC71ED39675616FDACE66 /* AccountViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0820CAD18918387F0AFAF06 /* AccountViews.swift */; };
+		AEA8D7FCB9D98A8026E1E4AE /* idevice-MIT.txt in Resources */ = {isa = PBXBuildFile; fileRef = B98AB781F43FDD54B06BA880 /* idevice-MIT.txt */; };
 		B199EF28B18B2629053DE1AC /* PairingActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A383FE2E3957F7EAABB02 /* PairingActivityWidget.swift */; };
 		B422342868304029968F5916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A378C03526168A0D9158A8 /* Assets.xcassets */; };
 		B53C0A2F180F7FC437AC3B0F /* LocalNetworkAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5DC94A90335748F754C /* LocalNetworkAuthorization.swift */; };
 		B5685F540CDDADC3E15B5F0B /* CertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CDA16FE0F2AF1ACA68FB8 /* CertManager.swift */; };
+		BA2E0350F3B9FEC97DA66A69 /* ThirdPartyNotices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DD66E1120E0EA879CA14698 /* ThirdPartyNotices.txt */; };
 		BC0F19E65BBE072F877A7B8A /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9E0209AAB1A35F5CC6394 /* PairingView.swift */; };
 		BE621C36324B4B8709F131E7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DD2B0C97CB43FE1A4CCC0 /* RootView.swift */; };
 		C31D39A18CE70E7F29E09DC5 /* SideNekoFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57B5308C0C90270C300E15E /* SideNekoFFI.xcframework */; };
 		C5F03BDCCE88890CA2AC2128 /* PairingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04774CE507A3794F8CA2BF39 /* PairingController.swift */; };
 		C61FADD3F46E5FAF401954FE /* VietnameseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9892F1F5EBB802B664AFDEC /* VietnameseStrings.swift */; };
 		CD6642313725F56DD554321E /* KoreanStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856CC129A74DA2B0C214E22 /* KoreanStrings.swift */; };
+		D2D6F3DBD87DBF6032C5DD72 /* apple-codesign-quick-LGPL-2.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C0901D7A5FF5AFB18445E7E /* apple-codesign-quick-LGPL-2.1.txt */; };
 		D3498193259C07CE5431B98A /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE557C56B77D540130CB793 /* NetworkStatus.swift */; };
 		D5F763D43CECE822818F5C14 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9458CB49BD0C2B5C44FA8 /* DeepLink.swift */; };
 		D90AD34E33E5E4DB670E2A47 /* TraditionalChineseStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827DADBA04D29AA2EED95E7 /* TraditionalChineseStrings.swift */; };
@@ -119,6 +128,8 @@
 		2A10B31D6C05C05883466840 /* LogRedactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRedactor.swift; sourceTree = "<group>"; };
 		2EE557C56B77D540130CB793 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 		2F1449C8DCEC7A64501183AF /* FrenchStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchStrings.swift; sourceTree = "<group>"; };
+		385EB30AF195FC3C3FBF40DE /* isideload-MIT.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "isideload-MIT.txt"; sourceTree = "<group>"; };
+		3D4735163FAAD092D7C6D2B0 /* Bootstrap-MIT.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Bootstrap-MIT.txt"; sourceTree = "<group>"; };
 		41C88E1B3E21CA412DA60418 /* ProblemReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemReport.swift; sourceTree = "<group>"; };
 		44B9458CB49BD0C2B5C44FA8 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		451D2DB0FF825126F57E2E0D /* SideStoreDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideStoreDownloader.swift; sourceTree = "<group>"; };
@@ -128,6 +139,7 @@
 		4CDB1D5A0B5E215EDA11776F /* SideNekoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNekoApp.swift; sourceTree = "<group>"; };
 		5768929FD4C5AC0028EF0703 /* KeepAlive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepAlive.swift; sourceTree = "<group>"; };
 		57C012A109A8F1C59EFE7DB2 /* SideNekoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SideNekoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD66E1120E0EA879CA14698 /* ThirdPartyNotices.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThirdPartyNotices.txt; sourceTree = "<group>"; };
 		5F5932EBD99E8320D45070FD /* SideBySideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBySideView.swift; sourceTree = "<group>"; };
 		61F398203EFBE89200A53643 /* PairingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingManager.swift; sourceTree = "<group>"; };
 		6B6CF3DDC112B80677AEC795 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
@@ -137,24 +149,30 @@
 		78549BB7145865649C066558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		787A4071F79895B135412EA5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7E4A383FE2E3957F7EAABB02 /* PairingActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingActivityWidget.swift; sourceTree = "<group>"; };
+		811F6EAE42F2AB802B2A488F /* LegalNoticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalNoticesView.swift; sourceTree = "<group>"; };
 		861B623D1A6A3BCD7FBE21F9 /* InstallActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallActivityAttributes.swift; sourceTree = "<group>"; };
+		86B48D3F93388AF3AE91D4A6 /* SideNeko-GPL-3.0.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SideNeko-GPL-3.0.txt"; sourceTree = "<group>"; };
 		87ED51556219E2A39D1C2E63 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		88A641F56C3C83CF70B26537 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8A9BC6C618E2775CE034C0BB /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		8B838184238D6575FD56F2F1 /* LogRedactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRedactorTests.swift; sourceTree = "<group>"; };
 		929678A794F4F7EFFFCD9F14 /* PairingNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingNotification.swift; sourceTree = "<group>"; };
+		9C0901D7A5FF5AFB18445E7E /* apple-codesign-quick-LGPL-2.1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "apple-codesign-quick-LGPL-2.1.txt"; sourceTree = "<group>"; };
 		A0AB5BECE6343BBB429DC975 /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
 		AE22BF99B6A506797F6EF1FA /* SigningTeamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningTeamsTests.swift; sourceTree = "<group>"; };
 		B0CE2F22C01267E21485D51A /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
 		B498DB6A405B782F0D7572B3 /* ItalianStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItalianStrings.swift; sourceTree = "<group>"; };
 		B89F8CFF0C1F66119E1650C0 /* ReportProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemView.swift; sourceTree = "<group>"; };
 		B9892F1F5EBB802B664AFDEC /* VietnameseStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietnameseStrings.swift; sourceTree = "<group>"; };
+		B98AB781F43FDD54B06BA880 /* idevice-MIT.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "idevice-MIT.txt"; sourceTree = "<group>"; };
 		BC0E3633BD80A87E58B96199 /* TurkishStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkishStrings.swift; sourceTree = "<group>"; };
 		C6F34C0961FB03156E5AF8C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA1713D2E64D6464AB3C9FFD /* SideNekoLiveActivity.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SideNekoLiveActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAC2D025486F50AD62D1C5ED /* RustDependencies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = RustDependencies.txt; sourceTree = "<group>"; };
 		CC5B369C6F2B4C144FC62990 /* RoutePlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanner.swift; sourceTree = "<group>"; };
 		CFC857C7664B416FC85C589E /* AppleSignInQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInQueue.swift; sourceTree = "<group>"; };
 		D4D0F2195757D3CBCED2F7FD /* InstallActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallActivityWidget.swift; sourceTree = "<group>"; };
+		D534F3CF00594B8517799CE1 /* SideInstaller-LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SideInstaller-LICENSE.txt"; sourceTree = "<group>"; };
 		D57B5308C0C90270C300E15E /* SideNekoFFI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SideNekoFFI.xcframework; sourceTree = "<group>"; };
 		E0820CAD18918387F0AFAF06 /* AccountViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViews.swift; sourceTree = "<group>"; };
 		E098594F591891193848AEB4 /* PairingLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingLiveActivity.swift; sourceTree = "<group>"; };
@@ -183,6 +201,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08FBF9D5DA0E3CDAEBB05D8F /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				9C0901D7A5FF5AFB18445E7E /* apple-codesign-quick-LGPL-2.1.txt */,
+				3D4735163FAAD092D7C6D2B0 /* Bootstrap-MIT.txt */,
+				B98AB781F43FDD54B06BA880 /* idevice-MIT.txt */,
+				385EB30AF195FC3C3FBF40DE /* isideload-MIT.txt */,
+				CAC2D025486F50AD62D1C5ED /* RustDependencies.txt */,
+				D534F3CF00594B8517799CE1 /* SideInstaller-LICENSE.txt */,
+				86B48D3F93388AF3AE91D4A6 /* SideNeko-GPL-3.0.txt */,
+				5DD66E1120E0EA879CA14698 /* ThirdPartyNotices.txt */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
 		2807F9B2FA19453D55FD966A /* ios-tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +291,7 @@
 				71831DC30F6443EA7EC86DCB /* JapaneseStrings.swift */,
 				5768929FD4C5AC0028EF0703 /* KeepAlive.swift */,
 				F856CC129A74DA2B0C214E22 /* KoreanStrings.swift */,
+				811F6EAE42F2AB802B2A488F /* LegalNoticesView.swift */,
 				71555707711AA8B5948D3BDD /* LiveContainerCertificate.swift */,
 				8A9BC6C618E2775CE034C0BB /* Localization.swift */,
 				FB98C5DC94A90335748F754C /* LocalNetworkAuthorization.swift */,
@@ -290,6 +324,7 @@
 				48AD379D1A5B4C75B1D5C17B /* UpdateChecker.swift */,
 				B9892F1F5EBB802B664AFDEC /* VietnameseStrings.swift */,
 				787A4071F79895B135412EA5 /* WelcomeView.swift */,
+				08FBF9D5DA0E3CDAEBB05D8F /* Legal */,
 			);
 			path = "ios-app";
 			sourceTree = "<group>";
@@ -360,7 +395,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					041E43238BE2C2E6DC5E964C = {
 						DevelopmentTeam = "";
@@ -403,6 +438,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B422342868304029968F5916 /* Assets.xcassets in Resources */,
+				05D0F585BE6D1757C94B3DD8 /* Bootstrap-MIT.txt in Resources */,
+				82A2D5838560E2585E8BCC40 /* RustDependencies.txt in Resources */,
+				54696E385D5241AAF8B669DC /* SideInstaller-LICENSE.txt in Resources */,
+				A0C0126FB8535E6EF952D9FA /* SideNeko-GPL-3.0.txt in Resources */,
+				BA2E0350F3B9FEC97DA66A69 /* ThirdPartyNotices.txt in Resources */,
+				D2D6F3DBD87DBF6032C5DD72 /* apple-codesign-quick-LGPL-2.1.txt in Resources */,
+				AEA8D7FCB9D98A8026E1E4AE /* idevice-MIT.txt in Resources */,
+				4076C81EEEA60EEC2335F42A /* isideload-MIT.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +478,7 @@
 				0196FD6AC7D7B10BCE4C06BF /* JapaneseStrings.swift in Sources */,
 				050B0318D501311826325453 /* KeepAlive.swift in Sources */,
 				CD6642313725F56DD554321E /* KoreanStrings.swift in Sources */,
+				56A1BE105AA392E0FC9C7DD6 /* LegalNoticesView.swift in Sources */,
 				37D25275BB8B9DDA677BA05D /* LiveContainerCertificate.swift in Sources */,
 				B53C0A2F180F7FC437AC3B0F /* LocalNetworkAuthorization.swift in Sources */,
 				0553720748E3204F009FF555 /* Localization.swift in Sources */,

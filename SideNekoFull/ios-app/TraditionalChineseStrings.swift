@@ -16,6 +16,12 @@ let traditionalChineseStrings: [String: String] = [
 
     // MARK: - Shared
 
+    "Licences & acknowledgements": "授權與致謝",
+    "Read the open-source licences included with this build.": "閱讀此版本內附的開源授權條款。",
+    "These licence texts are included inside this build and can be read without a network connection.":
+        "這些授權文字已包含在此版本中，沒有網路也可以閱讀。",
+    "This licence file is missing from the app bundle.": "App 內缺少這份授權檔案。",
+
     "Cancel": "取消",
     "Copy": "複製",
     "Copy logs": "複製日誌",
