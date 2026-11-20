@@ -33,9 +33,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
       - name: 執行完整 Rust 測試
         working-directory: SideNekoFull
         run: ./scripts/test-rust.sh
+      - name: 嚴格檢查 Rust 程式碼
+        working-directory: SideNekoFull/rust-core
+        run: cargo clippy --locked --all-targets -- -D warnings
 
   bootstrap:
     name: SideNeko bootstrap
