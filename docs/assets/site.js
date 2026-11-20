@@ -26,7 +26,11 @@ fetch("release.json", { cache: "no-store" })
       installButton.textContent = `開始安裝 SideNeko ${release.version}`;
       statusElement.textContent = `目前是 ${release.version} 測試版；會直接簽署並安裝 SideNeko w`;
     } else {
+      installButton.textContent = "查看安裝流程";
       statusElement.textContent = "v1.0.0 Beta 準備中：目前可先看原始碼與安裝流程 awa";
     }
   })
-  .catch(() => { statusElement.textContent = "版本狀態暫時讀不到 @@"; });
+  .catch(() => {
+    installButton.textContent = "查看安裝流程";
+    statusElement.textContent = "版本狀態暫時讀不到 @@";
+  });
