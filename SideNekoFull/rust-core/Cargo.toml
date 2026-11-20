@@ -2,7 +2,7 @@
 name = "sideneko_ffi"
 version = "0.1.0"
 edition = "2021"
-description = "C FFI shim over idevice/isideload for SideInstaller (pairing, connection, install, signing)"
+description = "SideNeko C FFI for Apple sign-in, pairing, signing and installation"
 
 [lib]
 name = "sideneko_ffi"

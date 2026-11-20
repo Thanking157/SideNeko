@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Sync the AltStore/SideStore source (frizzlem.json) with GitHub Releases.
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
+"""Sync the SideNeko AltStore/SideStore source with GitHub Releases.
 
 Every app in the source names its GitHub repo through its downloadURL
 (https://github.com/<owner>/<repo>/releases/...). For each one this script
@@ -23,7 +29,7 @@ the next run picks it up once it's uploaded. Prereleases (Nightflix's
 nightly-* builds) are never listed.
 
 Config, all overridable by env:
-  SOURCE_FILE    source to update in place (default: frizzlem.json)
+  SOURCE_FILE    source to update in place (default: sideneko.json)
   GITHUB_TOKEN   optional; raises the API rate limit from 60 to 5000/hour
 
 Prints `changed=true|false`, and writes it as a step output under Actions.
@@ -36,7 +42,7 @@ import sys
 import urllib.error
 import urllib.request
 
-SOURCE_FILE = os.environ.get("SOURCE_FILE", "frizzlem.json")
+SOURCE_FILE = os.environ.get("SOURCE_FILE", "sideneko.json")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 REPO_RE = re.compile(r"^https://github\.com/([^/]+)/([^/]+)/releases/")
 

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Turn the release-sideinstaller workflow's changelog input into Markdown.
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
+"""Turn SideNeko's release-workflow changelog input into Markdown.
 
 The Run workflow form on GitHub has a one-line box for it, so a line break is
 typed as \\n (\\n\\n for a blank line). Everything else is kept as typed:

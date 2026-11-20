@@ -5,8 +5,7 @@
 # Copyright (C) 2026 thanking157
 # Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
 
-# Build the unsigned SideNeko IPA from this checkout, as the
-# release-sideinstaller workflow does on GitHub: the Rust library, an Xcode
+# Build the unsigned SideNeko IPA from this checkout: the Rust library, an Xcode
 # project generated from project.yml, a Release build with signing off, and the
 # app zipped into Payload/.
 #
