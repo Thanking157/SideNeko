@@ -20,8 +20,10 @@
   `io.thanking157.sideneko`, version 1.0.0 and an arm64 executable.
 - `SideNekoFull/scripts/validate-ipa.sh dist/SideNeko.ipa` additionally checks
   the required Info.plist identity, URL scheme, arm64 main/extension binaries,
-  Live Activity, linked Apple sign-in/signing/pairing FFI symbols and absence of
-  provisioning profiles, credentials, pairing records or an existing signature.
+  deployment target, build SDK, App icon/assets, Live Activity, resolvable
+  runtime dependencies, linked Apple sign-in/signing/pairing FFI symbols and
+  absence of provisioning profiles, credentials, pairing records, local build
+  paths or an existing signature.
 - The localization checker finds all 810 Traditional Chinese and English keys
   represented; no duplicate keys or placeholder mismatches exist. Some
   non-primary translations remain incomplete.

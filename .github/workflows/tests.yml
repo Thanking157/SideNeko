@@ -63,3 +63,11 @@ jobs:
       - name: 檢查翻譯鍵與格式
         working-directory: SideNekoFull
         run: python3 scripts/check_translations.py
+
+  release-safety:
+    name: 發布安全檢查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: 核對網站、bootstrap 與 Release 開關
+        run: python3 scripts/check_release_state.py

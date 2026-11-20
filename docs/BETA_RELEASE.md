@@ -21,8 +21,10 @@ SideNekoFull/scripts/validate-ipa.sh dist/SideNeko.ipa
 ```
 
 驗證器會拒絕缺少主程式識別、arm64、Live Activity、SideNeko URL Scheme、
-Apple 登入／簽署／配對 FFI 的包，也會拒絕含簽署描述檔、帳密、配對資料或
-既有簽章的包。舊 `v0.1.0-beta` IPA 會因缺少 `CFBundleExecutable` 被拒絕。
+Apple 登入／簽署／配對 FFI、App 圖示、正確 deployment target、iOS 27.1+
+SDK 或完整 runtime 依賴的包，也會拒絕含簽署描述檔、帳密、配對資料、
+本機建置路徑或既有簽章的包。舊 `v0.1.0-beta` IPA 會因缺少
+`CFBundleExecutable` 被拒絕。
 
 ## 發佈關卡
 
@@ -34,12 +36,14 @@ Apple 登入／簽署／配對 FFI 的包，也會拒絕含簽署描述檔、帳
   必要來源歸屬保留在授權文件與衍生原始碼標頭。
 - [x] 自有 bootstrap 與配對 WASM 已由追蹤的 SideNeko 原始碼建置並部署。
 - [x] 網站、bootstrap 與公開二進位均由 `thanking157.github.io/SideNeko` 提供。
+- [ ] 將公開但已過時的 `v0.1.0-beta` Release 撤下或改為草稿；其 IPA 與
+  說明不是目前完整 SideNeko，且仍指示使用上游安裝流程。
 - [ ] 取得 SideInstaller 著作權人的書面允許，可公開散布編譯後的 SideNeko
   衍生 IPA；現行授權只明文授予衍生原始碼散布。
 - [ ] 在 iPhone 17 / iOS 27.3 完整跑過網站 → rootshell 配對 → Open Minis
   bootstrap → Apple ID/2FA → 簽署 → 安裝 → 首次開啟。
 
-未通過最後兩個關卡前，`docs/release.json` 必須保持 `available: false`，
+未通過上述公開發佈關卡前，`docs/release.json` 必須保持 `available: false`，
 不得把本機候選 IPA 冒充成已驗證的公開 Beta。
 
 ## 關卡通過後的固定發佈格式
