@@ -12,6 +12,9 @@
   arm64 iOS device with the SideNekoFFI library and Live Activity extension.
   The scripted build generates an isolated project under the ignored build
   folder, so a tracked or locally edited Xcode project is never overwritten.
+- A fresh local clone with no prebuilt XCFramework successfully rebuilt the
+  locked Rust device core, generated the project, packaged the IPA and passed
+  the IPA validator end to end.
 - The Debug app also builds for the generic arm64 iOS Simulator destination.
 - The generated IPA is a valid ZIP containing `Payload/SideNeko.app`, bundle ID
   `io.thanking157.sideneko`, version 1.0.0 and an arm64 executable.

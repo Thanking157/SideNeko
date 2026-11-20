@@ -10,10 +10,11 @@
 - URL Scheme：`sideneko`
 - 架構：主程式與 Live Activity 都是 `arm64`
 - 本機檔名：`dist/SideNeko.ipa`（Git 忽略，不提交進原始碼）
-- SHA-256：`e863d1b00f5d9bfe4eba19af3313bd34e377fa876170dd128ad24195a646a3fd`
+- SHA-256：`6b446dfc6b1c0a179c9891a9b00c84100469f8dfd50c8f3b1d3dd06befc33bb6`
 
 候選 IPA 已由目前的 SideNeko 原始碼建置，不是重新封裝的 SideInstaller
-官方 IPA。以下指令已通過：
+官方 IPA。它已在沒有預先建置 XCFramework 的全新本機 clone 中，從鎖定的
+Rust 原始碼開始重新建置。以下指令已通過：
 
 ```sh
 SideNekoFull/scripts/validate-ipa.sh dist/SideNeko.ipa
