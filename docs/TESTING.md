@@ -7,7 +7,8 @@
 - SideNeko bootstrap passes 108 tests with one true-device integration case
   skipped; the rootshell pairing module passes all 16 tests.
 - The renamed ARM64 Linux bootstrap and WASI pairing module build from the
-  tracked source, and their published SHA-256 files match.
+  tracked source with the pinned `SideNekoBootstrap/build-artifacts.sh` flow;
+  their published SHA-256 files match and contain no local developer path.
 - Xcode 27.2 clean-builds the unsigned SideNeko 1.0.0 Release for a generic
   arm64 iOS device with the SideNekoFFI library and Live Activity extension.
   The scripted build generates an isolated project under the ignored build

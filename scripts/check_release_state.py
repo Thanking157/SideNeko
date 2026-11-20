@@ -62,6 +62,11 @@ def verify_hash(artifact: str) -> None:
     actual = hashlib.sha256(path.read_bytes()).hexdigest()
     if actual != fields[0]:
         fail(f"checksum mismatch for {path.relative_to(ROOT)}")
+    strings = subprocess.run(
+        ["strings", str(path)], check=True, text=True, capture_output=True,
+    ).stdout
+    if re.search(r"/Users/[^/]+/|/private/var/folders/|/var/folders/|/build/home/Downloads/", strings):
+        fail(f"published bootstrap contains a local build path: {path.relative_to(ROOT)}")
 
 
 def main() -> None:

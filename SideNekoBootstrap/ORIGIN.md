@@ -17,3 +17,9 @@ source. No upstream-built binary is included.
 The MIT terms are retained in `LICENSE-MIT`. User-facing screens identify the
 product as SideNeko; upstream attribution remains here and in the repository's
 third-party notices.
+
+`build-artifacts.sh` is SideNeko's reproducible entry point for both published
+files. It locks Rust 1.100.0 through `rust-toolchain.toml`, requires
+cargo-zigbuild 0.24.1 and Zig 0.17.1, uses the two Cargo lockfiles, remaps local
+source paths, verifies the output formats and rejects developer/temp paths
+before `PUBLISH=1` can replace `docs/bootstrap/`.
