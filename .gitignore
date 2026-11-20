@@ -20,6 +20,13 @@ xcuserdata/
 # developer certificates or signing identities; keep every other .cer ignored.
 !SideNekoFull/rust-core/vendor/apple-codesign-quick/assets/AppleIncRootCertificate.cer
 !SideNekoFull/rust-core/vendor/apple-codesign-quick/assets/AppleWWDRCAG3.cer
+# Public Apple intermediate compiled into isideload; it is a trust certificate,
+# not a developer signing identity.
+!SideNekoFull/rust-core/vendor/isideload/src/assets/AppleWWDRCAG3.cer
+# Synthetic, self-signed test archives used only by rust-core unit tests. Their
+# TEST000000 identity and test key are fixtures, never real signing material.
+!SideNekoFull/rust-core/testdata/p12/openssl.p12
+!SideNekoFull/rust-core/testdata/p12/sidesign.p12
 *.key
 *.pem
 *.pairing
