@@ -13,6 +13,10 @@
 - The Debug app also builds for the generic arm64 iOS Simulator destination.
 - The generated IPA is a valid ZIP containing `Payload/SideNeko.app`, bundle ID
   `io.thanking157.sideneko`, version 1.0.0 and an arm64 executable.
+- `SideNekoFull/scripts/validate-ipa.sh dist/SideNeko.ipa` additionally checks
+  the required Info.plist identity, URL scheme, arm64 main/extension binaries,
+  Live Activity, linked Apple sign-in/signing/pairing FFI symbols and absence of
+  provisioning profiles, credentials, pairing records or an existing signature.
 - The localization checker finds all 807 Traditional Chinese and English keys
   represented; no duplicate keys or placeholder mismatches exist. Some
   non-primary translations remain incomplete.

@@ -1,4 +1,10 @@
 #!/bin/bash
+# Based on SideInstaller by FrizzleM
+# Copyright (C) 2026 FrizzleM
+# Modified and integrated into SideNeko by thanking157.
+# Copyright (C) 2026 thanking157
+# Licensed for non-commercial source distribution under SIDEINSTALLER_LICENSE.md.
+
 # Build the unsigned SideNeko IPA from this checkout, as the
 # release-sideinstaller workflow does on GitHub: the Rust library, an Xcode
 # project generated from project.yml, a Release build with signing off, and the
@@ -147,6 +153,9 @@ ditto "$app" "$stage/Payload/SideNeko.app"
 find "$stage" -name .DS_Store -delete
 rm -f "$OUTPUT" # zip would add to an existing archive instead of replacing it
 (cd "$stage" && zip -qryX "$OUTPUT" Payload)
+
+EXPECTED_BUNDLE_ID="$BUNDLE_ID" EXPECTED_VERSION="$version" \
+  "$ROOT/scripts/validate-ipa.sh" "$OUTPUT"
 
 echo "==> Done: $OUTPUT ($(du -h "$OUTPUT" | cut -f1 | tr -d ' '))"
 echo "    $BUNDLE_ID, version $version ($(plist CFBundleVersion "$app/Info.plist")), unsigned"
