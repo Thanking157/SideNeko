@@ -981,7 +981,7 @@ struct LocationView: View {
     // MARK: Header
 
     private var header: some View {
-        BrandHeader(icon: "location", image: "LocationLogo", title: L("Location spoofing")) {
+        BrandHeader(icon: "location.circle", title: L("Location spoofing")) {
             statusPill
                 .transition(.opacity)
         }

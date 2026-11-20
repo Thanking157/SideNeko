@@ -2047,8 +2047,7 @@ struct SideBySideView: View {
 
     private var welcomePage: some View {
         VStack(spacing: 16) {
-            BrandHeader(icon: "iphone.gen3.radiowaves.left.and.right",
-                        image: "SideBySideLogo",
+            BrandHeader(icon: "iphone.and.arrow.forward",
                         title: L("Side by Side"),
                         subtitle: L("Set up someone else's iPhone")) {
                 StatusDot(text: L("Same Wi-Fi network"), color: .secondary, idle: true)

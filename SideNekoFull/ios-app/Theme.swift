@@ -770,11 +770,11 @@ struct BrandHeader<Accessory: View>: View {
             }
         } else {
             ZStack {
-                tile.fill(Theme.navy)
-                tile.strokeBorder(Theme.hairline, lineWidth: 1)
+                tile.fill(Theme.accent.opacity(0.14))
+                tile.strokeBorder(Theme.accent.opacity(0.32), lineWidth: 1)
                 Image(systemName: icon)
                     .font(.system(size: glyphSide * 32 / 72))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Theme.accent)
             }
         }
     }

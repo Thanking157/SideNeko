@@ -467,7 +467,7 @@ struct EntitlementsView: View {
     // MARK: Header
 
     private var header: some View {
-        BrandHeader(icon: "checklist", image: "EntitlementsLogo", title: L("Entitlements")) {
+        BrandHeader(icon: "key.horizontal", title: L("Entitlements")) {
             if let team = manager.teamSummary {
                 StatusDot(text: team, color: Theme.positive)
                     .transition(.opacity)

@@ -56,7 +56,7 @@ struct PairingView: View {
     // MARK: Header
 
     private var header: some View {
-        BrandHeader(icon: "lock.doc", image: "PairingLogo", title: L("Pairing")) {
+        BrandHeader(icon: "link", title: L("Pairing")) {
             statusPill
                 .transition(.opacity)
                 .id(statusID)
