@@ -64,7 +64,7 @@ const STAGES: usize = 7;
 /// `developer-mode`: the install's first three steps, then Developer Mode.
 const DEVMODE_STAGES: usize = 4;
 /// The steps' names on the live screen, in order.
-const STEP_NAMES: [&str; STAGES] = ["Check", "Pairing", "Connect", "Apple ID", "Sign", "Install", "Handover"];
+const STEP_NAMES: [&str; STAGES] = ["檢查", "配對", "連線", "Apple ID", "簽署", "安裝", "交接"];
 const DEVMODE_NAME: &str = "Dev Mode";
 
 /// LocalDevVPN's address for this iPhone: traffic to it comes back to the
@@ -483,14 +483,14 @@ async fn pipeline(args: &Args) -> Result<()> {
     let note = |f: Fail| if devmode { devmode::unreachable_note(f) } else { f };
 
     if devmode {
-        ui::step(1, "Checking LocalDevVPN and this iPhone");
+        ui::step(1, "檢查 LocalDevVPN 與這台 iPhone");
     } else {
-        ui::step(1, "Checking LocalDevVPN, this iPhone and the internet");
+        ui::step(1, "檢查 LocalDevVPN、這台 iPhone 與網路");
     }
     let checked = preflight::run(args).await.map_err(note)?;
-    ui::done(if checked.online { "online, and the iPhone answers" } else { "the iPhone answers" });
+    ui::done(if checked.online { "網路與 iPhone 都有回應" } else { "iPhone 有回應" });
     if args.command == Command::Check {
-        ui::finish("Ready", &["Run sideneko-bootstrap to install SideNeko."]);
+        ui::finish("準備完成", &["執行 sideneko-bootstrap 即可安裝 SideNeko。"]);
         return Ok(());
     }
     // The rest dials where the iPhone answered, which isn't the port asked
@@ -500,16 +500,16 @@ async fn pipeline(args: &Args) -> Result<()> {
         ..args.clone()
     };
 
-    ui::step(2, "Pairing this iPhone with sideneko-bootstrap");
+    ui::step(2, "配對這台 iPhone");
     let pairing_path = args.pairing_path();
     let source = pairing::ensure(args, &pairing_path).await.map_err(note)?;
     ui::done(match source {
-        pairing::Source::Saved => "the saved pairing still works",
-        pairing::Source::Rootshell => "taken from rootshell",
-        pairing::Source::Minis => "paired here in Minis",
+        pairing::Source::Saved => "先前儲存的配對仍可使用",
+        pairing::Source::Rootshell => "已從 rootshell 取得配對",
+        pairing::Source::Minis => "已在 Minis 完成配對",
     });
 
-    ui::step(3, "Connecting to this iPhone through LocalDevVPN");
+    ui::step(3, "透過 LocalDevVPN 連接這台 iPhone");
     let mut connection = tunnel::open(args.device, &pairing_path).await.map_err(note)?;
     let device = connection.describe().await.map_err(note)?;
     ui::ok(&format!(
@@ -530,35 +530,34 @@ async fn pipeline(args: &Args) -> Result<()> {
     // signing anyway, so a fresh one is opened to install (as Side by Side does).
     drop(connection);
 
-    ui::step(4, "Signing in to your Apple Account");
+    ui::step(4, "登入你的 Apple 帳號");
     let mut session = account::sign_in(args).await?;
     ui::done(&session.team);
 
-    ui::step(5, "Signing SideNeko for this iPhone");
+    ui::step(5, "為這台 iPhone 簽署 SideNeko");
     let ipa = sign::fetch_ipa(args).await?;
     let signed = sign::sign(&mut session, &ipa, &device).await?;
     ui::done(&match &signed.version {
-        Some(version) => format!("{} {version} signed", signed.name),
-        None => format!("{} signed", signed.name),
+        Some(version) => format!("{} {version} 已簽署", signed.name),
+        None => format!("{} 已簽署", signed.name),
     });
 
-    ui::step(6, "Installing it");
+    ui::step(6, "安裝 SideNeko");
     let mut connection = tunnel::open(args.device, &pairing_path).await?;
     let uploaded = install::install(&mut connection, &signed.app_dir).await?;
-    ui::ok(&format!("{} installed ({})", signed.name, signed.bundle_id));
-    ui::done(&format!("installed · {uploaded}"));
+    ui::ok(&format!("{} 已安裝 ({})", signed.name, signed.bundle_id));
+    ui::done(&format!("安裝完成 · {uploaded}"));
 
-    ui::step(7, "Handing SideNeko the pairing");
+    ui::step(7, "將配對資料交給 SideNeko");
     seed::hand_over(&mut connection, &signed.bundle_id, &pairing_path).await?;
-    ui::done("SideNeko has the pairing");
+    ui::done("SideNeko 已取得配對資料");
 
     // Its own URL scheme (ios-app/Info.plist): the page's button opens it.
-    ui::link("Open SideNeko", "sideneko://");
+    ui::link("開啟 SideNeko", "sideneko://");
     ui::finish(
-        "SideNeko is installed",
+        "SideNeko 安裝完成",
         &[
-            "Open it from your Home Screen. The first time, iOS asks you to trust your Apple \
-             Account: Settings › General › VPN & Device Management.",
+            "請從主畫面開啟。第一次使用時，請到「設定 › 一般 › VPN 與裝置管理」信任你的 Apple 帳號。",
             team::lasts(session.kind, session.first),
         ],
     );

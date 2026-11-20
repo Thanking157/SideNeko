@@ -1,0 +1,23 @@
+.code-block {
+  position: relative;
+  min-width: 0;
+}
+
+.code-block code {
+  padding-right: 88px;
+}
+
+.copy-button {
+  position: absolute;
+  top: 20px;
+  right: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: var(--ink);
+  background: var(--card);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 800;
+  cursor: pointer;
+}

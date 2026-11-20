@@ -16,6 +16,29 @@ themeButton.addEventListener("click", () => {
   applyTheme(next);
 });
 
+document.querySelectorAll("#guide code").forEach((code) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "code-block";
+  code.parentNode.insertBefore(wrapper, code);
+  wrapper.appendChild(code);
+
+  const copyButton = document.createElement("button");
+  copyButton.type = "button";
+  copyButton.className = "copy-button";
+  copyButton.textContent = "複製";
+  copyButton.setAttribute("aria-label", "複製這段指令");
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(code.innerText);
+      copyButton.textContent = "已複製 w";
+    } catch {
+      copyButton.textContent = "請長按複製";
+    }
+    setTimeout(() => { copyButton.textContent = "複製"; }, 1800);
+  });
+  wrapper.appendChild(copyButton);
+});
+
 const statusElement = document.querySelector("#release-status");
 const installButton = document.querySelector("#install-button");
 fetch("release.json", { cache: "no-store" })

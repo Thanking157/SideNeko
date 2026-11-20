@@ -48,7 +48,7 @@ pub async fn install(connection: &mut Connection, app_dir: &Path) -> Result<Stri
     let files = entries.iter().filter(|e| !e.is_dir).count();
     let size = format!("{:.1} MB, {files} files", total as f64 / 1_048_576.0);
     ui::status(&format!(
-        "uploading {files} files ({:.1} MB)",
+        "正在上傳 {files} 個檔案 ({:.1} MB)",
         total as f64 / 1_048_576.0
     ));
 
@@ -99,17 +99,17 @@ pub async fn install(connection: &mut Connection, app_dir: &Path) -> Result<Stri
             )
         })?;
         sent += entry.size;
-        ui::progress("uploaded", sent, total);
+        ui::progress("已上傳", sent, total);
     }
-    ui::progress("uploaded", total, total);
+    ui::progress("已上傳", total, total);
     ui::progress_end();
     ui::detail(&format!(
-        "upload took {:.1} s",
+        "上傳耗時 {:.1} 秒",
         started.elapsed().as_secs_f64()
     ));
 
     // Every file, at its size: an incomplete bundle installs "fine".
-    ui::status("checking every file arrived whole");
+    ui::status("正在檢查所有檔案是否完整");
     let mut missing = Vec::new();
     for entry in entries.iter().filter(|e| !e.is_dir) {
         let remote = format!("{remote_root}/{}", entry.relative);
@@ -131,7 +131,7 @@ pub async fn install(connection: &mut Connection, app_dir: &Path) -> Result<Stri
             missing.join(", "),
         ));
     }
-    ui::ok("upload checked: every file arrived whole");
+    ui::ok("上傳檢查完成：所有檔案都完整");
 
     let mut proxy =
         InstallationProxyClient::connect_rsd(&mut connection.adapter, &mut connection.handshake)
@@ -146,13 +146,13 @@ pub async fn install(connection: &mut Connection, app_dir: &Path) -> Result<Stri
     // and rejects the bundle with 0xe8008015.
     let mut options = plist::Dictionary::new();
     options.insert("PackageType".into(), "Developer".into());
-    ui::status("installing");
+    ui::status("正在安裝");
     let installed = proxy
         .install_with_callback(
             remote_root.clone(),
             Some(plist::Value::Dictionary(options)),
             |(percent, _): (u64, ())| async move {
-                ui::percent("installed", percent);
+                ui::percent("已安裝", percent);
             },
             (),
         )

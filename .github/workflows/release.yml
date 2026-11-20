@@ -25,7 +25,6 @@ jobs:
           gh release create "$GITHUB_REF_NAME" SideNeko.ipa \
             --repo "$GITHUB_REPOSITORY" \
             --title "SideNeko v1.0.0 Beta" \
-            --prerelease \
             --notes-file docs/BETA_RELEASE_NOTES.md
       - name: 移除暫存分支
         if: success()

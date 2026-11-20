@@ -63,10 +63,10 @@ pub async fn sign_in(args: &Args) -> Result<Session> {
     {
         Some(id) => id,
         None => ui::ask_text(
-            "sign in to your Apple Account",
-            "Email",
-            "your Apple Account",
-            "Apple Account email: ",
+            "登入你的 Apple 帳號",
+            "電子郵件",
+            "你的 Apple 帳號",
+            "Apple 帳號電子郵件：",
         )
         .unwrap_or_default(),
     };
@@ -82,10 +82,10 @@ pub async fn sign_in(args: &Args) -> Result<Session> {
     let password = match std::env::var("SIDENEKO_PASSWORD") {
         Ok(p) if !p.is_empty() => p,
         _ => ui::ask_secret(
-            "sign in to your Apple Account",
-            "Password",
-            "it goes only to Apple",
-            "Password (not shown; it goes only to Apple): ",
+            "登入你的 Apple 帳號",
+            "密碼",
+            "只會傳送給 Apple",
+            "密碼（不顯示，只會傳送給 Apple）：",
         )
         .map_err(|e| {
             Fail::new(
@@ -111,7 +111,7 @@ pub async fn sign_in(args: &Args) -> Result<Session> {
     let servers = candidates(args.anisette.as_deref(), last_server(&args.home).as_deref());
     let mut last_error = String::new();
     for server in &servers {
-        ui::status(&format!("signing in through {}", host_of(server)));
+        ui::status(&format!("正在透過 {} 登入", host_of(server)));
         match apple_session::open(
             &apple_id, &password, server, &storage, true, two_factor, "Apple ID",
         )
@@ -132,7 +132,7 @@ pub async fn sign_in(args: &Args) -> Result<Session> {
                 // `open` has just listed the teams, so the one picked is
                 // handed over rather than listed again.
                 sideloader.set_team(picked);
-                ui::ok(&format!("signed in — {team}"));
+                ui::ok(&format!("登入成功 — {team}"));
                 return Ok(Session {
                     sideloader,
                     team,
@@ -444,7 +444,7 @@ fn ask_two_factor_live(prompt: &Prompt) -> Option<TwoFactorCallbackResponse> {
                 hints.push(ui::Hint::Warning(warning));
             }
             hints.push(ui::Hint::Plain(sent.clone()));
-            match ui::ask_code_or_more("enter the code Apple sent", "Code", &hints)? {
+            match ui::ask_code_or_more("輸入 Apple 傳送的驗證碼", "驗證碼", &hints)? {
                 ui::CodeAnswer::Code(code) => {
                     return Some(TwoFactorCallbackResponse::SubmitCode(code))
                 }
@@ -470,17 +470,17 @@ fn ask_two_factor_plain(prompt: &Prompt) -> TwoFactorCallbackResponse {
     }
     match prompt.method {
         Method::Devices => {
-            ui::status("Apple sent a verification code to your other Apple devices.")
+            ui::status("Apple 已將驗證碼傳送到你的其他 Apple 裝置。")
         }
         Method::Sms => ui::status(&format!(
-            "Apple texted a verification code to {}.",
+            "Apple 已透過簡訊將驗證碼傳送到 {}。",
             prompt.number(prompt.selected)
         )),
         Method::Voice => ui::status(&format!(
-            "Apple is calling {} with a verification code.",
+            "Apple 正在撥打 {} 提供驗證碼。",
             prompt.number(prompt.selected)
         )),
-        Method::Choose => ui::status("Choose how Apple should send the verification code."),
+        Method::Choose => ui::status("選擇 Apple 傳送驗證碼的方式。"),
     }
     for (id, number, mode) in &prompt.numbers {
         let how = if mode == "voice" { " (calls only)" } else { "" };
@@ -489,7 +489,7 @@ fn ask_two_factor_plain(prompt: &Prompt) -> TwoFactorCallbackResponse {
     ui::status("Type the code, or: t N to text number N, c N to call it, d for your devices,");
     ui::status("r to send it again, q to give up.");
     loop {
-        let Some(line) = ui::ask("Code: ") else {
+        let Some(line) = ui::ask("驗證碼：") else {
             return TwoFactorCallbackResponse::Abort;
         };
         match parse_two_factor(&line) {

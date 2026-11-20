@@ -46,7 +46,7 @@ pub async fn fetch_ipa(args: &Args) -> Result<PathBuf> {
 }
 
 async fn download(url: &str, dest: &Path) -> Result<PathBuf> {
-    ui::status("downloading SideNeko");
+    ui::status("正在下載 SideNeko");
     ui::detail(url);
     let client = reqwest::Client::builder()
         .user_agent(format!("sideneko-bootstrap/{VERSION}"))
@@ -93,7 +93,7 @@ async fn download(url: &str, dest: &Path) -> Result<PathBuf> {
         })?;
         received += chunk.len() as u64;
         if let Some(total) = total.filter(|t| *t > 0) {
-            ui::progress("downloaded", received, total);
+            ui::progress("已下載", received, total);
         }
     }
     ui::progress_end();
@@ -102,7 +102,7 @@ async fn download(url: &str, dest: &Path) -> Result<PathBuf> {
         .map_err(|e| Fail::new(format!("Couldn't write {}.", dest.display()), e.to_string()))?;
     check_ipa(dest)?;
     ui::ok(&format!(
-        "downloaded SideNeko ({:.1} MB)",
+        "SideNeko 下載完成 ({:.1} MB)",
         received as f64 / 1_048_576.0
     ));
     Ok(dest.to_path_buf())
@@ -131,7 +131,7 @@ fn check_ipa(path: &Path) -> Result<()> {
 }
 
 pub async fn sign(session: &mut Session, ipa: &Path, device: &DeviceInfo) -> Result<Signed> {
-    ui::status("signing; this takes a while here");
+    ui::status("正在簽署，這裡需要一點時間");
     let (app_dir, _special) = session
         .sideloader
         .sign_app(
