@@ -17,15 +17,15 @@ jobs:
         run: |
           git fetch origin release-staging --depth=1
           git show origin/release-staging:SideNeko.ipa > SideNeko.ipa
-          echo "6b446dfc6b1c0a179c9891a9b00c84100469f8dfd50c8f3b1d3dd06befc33bb6  SideNeko.ipa" | sha256sum --check --strict
+          echo "2c69ffaa2389536e1b7e917aeccd457a0805d9139cbb1d815bd5673849cffdc1  SideNeko.ipa" | sha256sum --check --strict
       - name: 建立 Beta Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "$GITHUB_REF_NAME" SideNeko.ipa \
             --repo "$GITHUB_REPOSITORY" \
-            --title "SideNeko v1.0.0 Beta" \
-            --notes-file docs/BETA_RELEASE_NOTES.md
+            --title "SideNeko v1.0.1 Beta" \
+            --notes "最後一輪 App 修改：移除 Madeira、精簡語言與致謝，工具頁改用橘色 SF Symbols。"
       - name: 移除暫存分支
         if: success()
         run: git push origin --delete release-staging

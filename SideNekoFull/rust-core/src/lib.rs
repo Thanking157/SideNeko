@@ -297,21 +297,6 @@ pub unsafe extern "C" fn si_sign_ipa(
     )
 }
 
-/// Set `*out_json` to the sign-in an app needs to renew its own provisioning
-/// profile: `{team_id, adsid, token, token_expires, anisette_identifier,
-/// anisette_adi_pb}`. Blocks, but asks Apple nothing.
-///
-/// # Safety
-/// See `account::signing_account`.
-#[no_mangle]
-pub unsafe extern "C" fn si_signing_account(
-    session: *mut SignSession,
-    out_json: *mut *mut c_char,
-    out_error: *mut *mut c_char,
-) -> i32 {
-    account::signing_account(session, out_json, out_error)
-}
-
 /// Build SideStore's `Account.sideconf` payload, setting `*out_json` to it.
 /// Blocks.
 ///

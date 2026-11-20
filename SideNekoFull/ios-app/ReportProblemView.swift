@@ -148,7 +148,7 @@ struct ReportProblemView: View {
                     .font(.footnote)
                     .foregroundStyle(Theme.negative)
             } else if deviceCrashes?.isEmpty == true {
-                Text(L("No crash logs from SideStore, LiveContainer or Madeira in the last %d days.",
+                Text(L("No crash logs from SideStore or LiveContainer in the last %d days.",
                        DeviceCrashLog.maxAgeDays))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -156,7 +156,7 @@ struct ReportProblemView: View {
         } header: {
             Text(L("Crash logs"))
         } footer: {
-            Text(L("iOS hands SideNeko its own crashes the next time it opens. Crash logs from SideStore, LiveContainer and Madeira are read from this iPhone through LocalDevVPN."))
+            Text(L("iOS hands SideNeko its own crashes the next time it opens. Crash logs from SideStore and LiveContainer are read from this iPhone through LocalDevVPN."))
         }
     }
 

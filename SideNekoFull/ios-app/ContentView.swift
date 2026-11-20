@@ -347,7 +347,7 @@ struct ContentView: View {
             .animation(.smooth(duration: 0.28), value: engine.stableReleased)
         }
         .disabled(engine.isRunning)
-        // Madeira offers Stable only once its first stable release is out.
+        // Refresh channel availability when the selected source changes.
         .task(id: engine.installSource) { await engine.checkStableRelease(for: engine.installSource) }
     }
 
@@ -1721,13 +1721,12 @@ struct FileImporterRepresentableView: UIViewControllerRepresentable {
 
 extension InstallSource {
     /// The app's own icon in the asset catalog: the official SideStore,
-    /// LiveContainer, Madeira and AltStore icons from their repositories
-    /// (AGPL-3.0 and GPL-3.0), at 256 px. Nil for a custom IPA.
+    /// LiveContainer and AltStore icons from their repositories, at 256 px.
+    /// Nil for a custom IPA.
     var iconImage: String? {
         switch self {
         case .sideStore:     return "SideStoreLogo"
         case .liveContainer: return "LiveContainerLogo"
-        case .madeira:       return "MadeiraLogo"
         case .altStore:      return "AltStoreLogo"
         case .custom:        return nil
         }

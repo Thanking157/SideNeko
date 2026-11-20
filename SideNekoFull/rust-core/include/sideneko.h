@@ -235,12 +235,10 @@ int32_t si_apple_signin(const char *apple_id,
 // NULL/empty to bundle none. `memory_limit` says whether the Increased Memory
 // Limit capability is enabled on the app's App IDs before the profile is
 // requested, so the signed app carries that entitlement: 0 no; 1 yes, and
-// signing fails if Apple refuses (Madeira needs it); 2 yes, except for the app
+// signing fails if Apple refuses; 2 yes, except for the app
 // stores that refresh themselves (SideStore, LiveContainer+SideStore, AltStore,
 // StikStore), and the app is signed without it if Apple refuses.
-// `app_group` is non-zero for every app but one that renews its own profile
-// (Madeira): zero leaves its App IDs without an app group, which an App ID it
-// registers again later wouldn't have either.
+// `app_group` controls whether the signed app receives its own app group.
 int32_t si_sign_ipa(SignSession *session,
                     const char *ipa_path,
                     const char *udid,
@@ -250,17 +248,6 @@ int32_t si_sign_ipa(SignSession *session,
                     int32_t app_group,
                     char **out_signed_path,
                     char **out_error);
-
-// The sign-in an app needs to renew its own provisioning profile, for handing
-// to Madeira. BLOCKS, but asks Apple nothing. On success *out_json is a heap
-// JSON object: {team_id, adsid, token, token_expires: <unix seconds, 0 if Apple
-// stated none>, anisette_identifier: <base64>, anisette_adi_pb: <base64>}. The
-// token is the session's developer-portal token: it is a credential, and there
-// is no password in here. Returns 0 on success, non-zero on error (*out_error
-// set). Free strings with si_string_free.
-int32_t si_signing_account(SignSession *session,
-                           char **out_json,
-                           char **out_error);
 
 // Build the Account.sideconf payload SideStore imports on launch (Apple ID,
 // signing certificate as an encrypted p12, and the anisette identity). BLOCKS.

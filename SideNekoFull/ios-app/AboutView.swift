@@ -66,7 +66,7 @@ struct AboutView: View {
         PanelCard {
             VStack(alignment: .leading, spacing: 12) {
                 sectionTitle(L("About"), systemImage: "info.circle")
-                Text(L("SideNeko installs SideStore and LiveContainer straight onto your iPhone, with no PC involved."))
+                Text(L("SideNeko signs and installs your apps right on this iPhone — no computer needed, nice and easy :3"))
                     .font(.subheadline)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -86,14 +86,6 @@ struct AboutView: View {
                          title: L("Report a problem"),
                          detail: L("Opens a GitHub issue with this app's details, its log and crash logs."),
                          action: { showReport = true })
-                NavigationLink {
-                    LegalNoticesView()
-                } label: {
-                    AboutDestinationRow(systemImage: "doc.text.magnifyingglass",
-                                        title: L("Licences & acknowledgements"),
-                                        detail: L("Read the open-source licences included with this build."))
-                }
-                .buttonStyle(.plain, sound: .tick)
             }
         }
     }
@@ -108,21 +100,10 @@ struct AboutView: View {
                          title: "jkcoxson",
                          detail: L("For idevice, the library SideNeko talks to your iPhone through. None of this exists without it."),
                          urlString: "https://github.com/jkcoxson/idevice")
-                AboutRow(systemImage: "ladybug",
-                         title: "Vexon",
-                         detail: L("For the support, and for spotting the bugs that got fixed because of it."))
-                AboutRow(systemImage: "character.bubble",
-                         title: "so-5699",
-                         detail: L("For the Japanese translation."),
-                         urlString: "https://github.com/so-5699")
-                AboutRow(systemImage: "character.bubble",
-                         title: "kes158",
-                         detail: L("For the Korean translation."),
-                         urlString: "https://github.com/kes158")
-                AboutRow(systemImage: "character.bubble",
-                         title: "Mr3242-Scripter",
-                         detail: L("For the Turkish translation."),
-                         urlString: "https://github.com/Mr3242-Scripter")
+                AboutRow(systemImage: "pawprint.fill",
+                         title: "Frizzle",
+                         detail: L("For creating SideInstaller and siboot, which gave SideNeko an important technical reference for its computer-free installation flow and made sideloading with only an iPhone much easier :3"),
+                         urlString: "https://github.com/FrizzleM")
             }
         }
     }
@@ -133,7 +114,7 @@ struct AboutView: View {
         PanelCard {
             VStack(alignment: .leading, spacing: 16) {
                 sectionTitle(L("Built with"), systemImage: "shippingbox")
-                Text(L("The open source work this app is built on:"))
+                Text(L("SideNeko is happily built with these lovely open-source projects w"))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -157,14 +138,14 @@ struct AboutView: View {
                          title: "LiveContainer",
                          detail: L("Runs sideloaded apps without spending an app slot on each one."),
                          urlString: "https://github.com/LiveContainer/LiveContainer")
-                AboutRow(systemImage: "gamecontroller",
-                         title: "Madeira",
-                         detail: L("Runs Windows PC games on your iPhone. By Will Faust, GPL-3.0."),
-                         urlString: "https://github.com/willfaust/Madeira")
-                AboutRow(systemImage: "externaldrive",
-                         title: "DeveloperDiskImage",
-                         detail: L("The developer disk image location spoofing mounts. Mirrored by doronz88."),
-                         urlString: "https://github.com/doronz88/DeveloperDiskImage")
+                AboutRow(systemImage: "iphone.and.arrow.forward",
+                         title: "SideInstaller",
+                         detail: L("SideNeko's computer-free installation design takes inspiration from SideInstaller."),
+                         urlString: "https://github.com/FrizzleM/SideInstaller")
+                AboutRow(systemImage: "iphone.gen3.radiowaves.left.and.right",
+                         title: "siboot",
+                         detail: L("Signs and performs the first installation right on the iPhone with the user's own Apple Account — no computer needed w"),
+                         urlString: "https://github.com/FrizzleM/siboot")
             }
         }
     }

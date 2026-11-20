@@ -532,7 +532,7 @@ struct ProblemReport {
 struct DeviceCrashLog: Identifiable, Hashable {
     /// The report's filename, e.g. `SideStore-2026-10-17-101010.ips`.
     let name: String
-    /// The app it belongs to: SideStore, LiveContainer or Madeira.
+    /// The app it belongs to: SideStore or LiveContainer.
     let app: String
     /// When it crashed, from the filename, in the iPhone's time zone.
     let date: Date?
@@ -547,12 +547,10 @@ struct DeviceCrashLog: Identifiable, Hashable {
     private static let perApp = 3
 
     /// The processes whose reports are read, and the app each belongs to.
-    /// LiveProcess is LiveContainer's multitasking extension, and
-    /// MadeiraJITHelper is Madeira's JIT extension.
+    /// LiveProcess is LiveContainer's multitasking extension.
     private static let processes: [String: String] = [
         "SideStore": "SideStore",
         "LiveContainer": "LiveContainer", "LiveProcess": "LiveContainer",
-        "Madeira": "Madeira", "MadeiraJITHelper": "Madeira",
     ]
 
     /// From every path the crash folders list, each app's newest reports from

@@ -97,13 +97,12 @@ struct AltSourceFeed {
     }
 }
 
-/// What to install: two SideStore builds and Madeira, fetched from GitHub,
+/// What to install: two SideStore builds fetched from GitHub,
 /// AltStore, fetched from its own source, or a user-supplied IPA. Nothing is
 /// known about the latter, so its release properties are nil.
 enum InstallSource: String, CaseIterable, Identifiable {
     case sideStore
     case liveContainer
-    case madeira
     case altStore
     case custom
 
@@ -114,7 +113,6 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore:     return "SideStore"
         case .liveContainer: return "LiveContainer + SideStore"
-        case .madeira:       return "Madeira"
         case .altStore:      return "AltStore"
         case .custom:        return L("Custom .ipa")
         }
@@ -125,20 +123,17 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore:     return "SideStore"
         case .liveContainer: return "SS + LiveContainer"
-        case .madeira:       return "Madeira"
         case .altStore:      return "AltStore"
         case .custom:        return L("Custom .ipa")
         }
     }
 
-    /// GitHub "owner/repo" the IPA comes from: its releases, and for Madeira's
-    /// nightly its Actions builds (`actionsBuild(_:)`). Nil for AltStore, which
+    /// GitHub "owner/repo" the IPA comes from. Nil for AltStore, which
     /// comes from its own source (`feed`).
     var repo: String? {
         switch self {
         case .sideStore:        return "SideStore/SideStore"
         case .liveContainer:    return "LiveContainer/LiveContainer"
-        case .madeira:          return "willfaust/Madeira"
         case .altStore, .custom: return nil
         }
     }
@@ -155,7 +150,7 @@ enum InstallSource: String, CaseIterable, Identifiable {
             return AltSourceFeed(url: URL(string: "https://apps.altstore.io")!,
                                  bundleID: AltStorePairingHandoff.bundleID,
                                  oldestVersion: [2, 3])
-        case .sideStore, .liveContainer, .madeira, .custom:
+        case .sideStore, .liveContainer, .custom:
             return nil
         }
     }
@@ -163,38 +158,22 @@ enum InstallSource: String, CaseIterable, Identifiable {
     /// The workflow whose newest build the channel installs, for a channel
     /// taken from GitHub Actions instead of a release.
     ///
-    /// Madeira publishes no nightly release: its nightly is the build CI makes
-    /// of every push to main. Its releases are the stable channel; the newest
-    /// (0.1.3) predates the self-refresh (willfaust/Madeira#264, merged 28
-    /// October 2026) that SideNeko hands its sign-in to.
     func actionsBuild(_ channel: ReleaseChannel) -> ActionsBuild? {
-        switch (self, channel) {
-        case (.madeira, .nightly):
-            return ActionsBuild(repo: "willfaust/Madeira", workflow: "build.yml",
-                                branch: "main", artifact: "Madeira-ipa")
-        default:
-            return nil
-        }
+        nil
     }
 
     /// The channels the picker offers: both for the SideStore builds, stable
-    /// alone for AltStore and a custom IPA, and for Madeira its nightly alone
-    /// until a release from `firstStableVersion` on is out (`stableReleased`).
+    /// alone for AltStore and a custom IPA.
     func channels(stableReleased: Bool) -> [ReleaseChannel] {
         switch self {
         case .sideStore, .liveContainer: return [.stable, .nightly]
-        case .madeira:                   return stableReleased ? [.stable, .nightly] : [.nightly]
         case .altStore, .custom:         return [.stable]
         }
     }
 
-    /// The first release the stable channel installs, for a build whose stable
-    /// channel waits for it. Madeira's releases before 0.2.0 predate the
-    /// self-refresh (willfaust/Madeira#264), so until 0.2.0 is out Madeira
-    /// offers only its nightly, the CI build of main.
+    /// The first release the stable channel installs, when one is required.
     var firstStableVersion: [Int]? {
         switch self {
-        case .madeira:                                       return [0, 2, 0]
         case .sideStore, .liveContainer, .altStore, .custom: return nil
         }
     }
@@ -218,12 +197,11 @@ enum InstallSource: String, CaseIterable, Identifiable {
     }
 
     /// The oldest iOS the build runs on, when that is newer than what
-    /// SideNeko itself installs on. Madeira's JIT helper needs iOS 26.
+    /// SideNeko itself installs on.
     /// AltStore's source says which iOS each version needs, and the download
     /// takes the newest that runs on the iPhone.
     var minimumOSMajorVersion: Int? {
         switch self {
-        case .madeira:                                       return 26
         case .sideStore, .liveContainer, .altStore, .custom: return nil
         }
     }
@@ -240,31 +218,21 @@ enum InstallSource: String, CaseIterable, Identifiable {
         }
     }
 
-    /// Published `.ipa` asset name, used to build the direct download URL. Nil
-    /// for Madeira too, whose asset is named after its release: see
-    /// `assetFileName(forTag:)`.
+    /// Published `.ipa` asset name, used to build the direct download URL.
     var assetFileName: String? {
         switch self {
         case .sideStore:                   return "SideStore.ipa"
         case .liveContainer:               return "LiveContainer+SideStore.ipa"
-        case .madeira, .altStore, .custom: return nil
+        case .altStore, .custom: return nil
         }
     }
 
-    /// The `.ipa` asset's name on the release tagged `tag`, for a build that
-    /// names it after the version: "Madeira-0.1.3.ipa" on "v0.1.3".
     func assetFileName(forTag tag: String) -> String? {
-        switch self {
-        case .madeira:
-            let version = tag.hasPrefix("v") ? String(tag.dropFirst()) : tag
-            return version.isEmpty ? nil : "Madeira-\(version).ipa"
-        case .sideStore, .liveContainer, .altStore, .custom:
-            return nil
-        }
+        nil
     }
 
     /// True when a release's title only repeats the build's name and the
-    /// version its tag carries ("Madeira 0.1.3" on "v0.1.3").
+    /// version its tag carries.
     func titleRestatesTag(_ title: String, tag: String) -> Bool {
         let version = tag.hasPrefix("v") ? String(tag.dropFirst()) : tag
         return [version, tag].contains {
@@ -302,7 +270,7 @@ enum InstallSource: String, CaseIterable, Identifiable {
                 assetName: "LiveContainer+SideStore.ipa",
                 channel: .nightly,
                 sha256: "bec41bc21d75a0f2e85a0aa589ce5772e24e410deb017486758a3bc0503c8de7")
-        case .sideStore, .madeira, .altStore, .custom:
+        case .sideStore, .altStore, .custom:
             return nil
         }
     }
@@ -332,7 +300,6 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore:     return "SideStore"
         case .liveContainer: return "LiveContainer+SideStore"
-        case .madeira:       return "Madeira"
         case .altStore:      return "AltStore"
         case .custom:        return nil
         }
@@ -349,7 +316,6 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore:     return "SideStore"
         case .liveContainer: return "LiveContainer"
-        case .madeira:       return MadeiraPairingHandoff.appName
         case .altStore:      return AltStorePairingHandoff.appName
         case .custom:        return nil
         }
@@ -360,7 +326,6 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore:     return "com.SideStore.SideStore"
         case .liveContainer: return "com.kdt.livecontainer"
-        case .madeira:       return MadeiraPairingHandoff.bundleID
         case .altStore:      return AltStorePairingHandoff.bundleID
         case .custom:        return nil
         }
@@ -372,19 +337,17 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore, .custom: return "ALTPairingFile.mobiledevicepairing"
         case .liveContainer:      return "SideStore/Documents/ALTPairingFile.mobiledevicepairing"
-        case .madeira:            return MadeiraPairingHandoff.remoteRelativePath
         case .altStore:           return AltStorePairingHandoff.remoteRelativePath
         }
     }
 
     /// True when the app works without the pairing file, so failing to place
-    /// it doesn't fail the install: Madeira can pair itself or use StikDebug,
-    /// AltStore pairs as its Remote AltServer is set up (or refreshes through
+    /// it doesn't fail the install: AltStore pairs as its Remote AltServer is set up (or refreshes through
     /// AltServer on a computer), and nothing is known about a custom IPA.
     var pairingIsOptional: Bool {
         switch self {
         case .sideStore, .liveContainer:   return false
-        case .madeira, .altStore, .custom: return true
+        case .altStore, .custom: return true
         }
     }
 
@@ -394,7 +357,7 @@ enum InstallSource: String, CaseIterable, Identifiable {
         switch self {
         case .sideStore:                   return .standalone
         case .liveContainer:               return .liveContainer
-        case .madeira, .altStore, .custom: return nil
+        case .altStore, .custom: return nil
         }
     }
 
@@ -408,10 +371,6 @@ enum InstallSource: String, CaseIterable, Identifiable {
             // Prefer the published name, in case the asset is renamed later.
             return assets.first { $0.name == "LiveContainer+SideStore.ipa" }
                 ?? assets.first { $0.name.lowercased().contains("sidestore") && $0.name.hasSuffix(".ipa") }
-        case .madeira:
-            // "Madeira-<version>.ipa", beside its checksum file.
-            return assets.first { $0.name.lowercased().hasPrefix("madeira") && $0.name.hasSuffix(".ipa") }
-                ?? assets.first { $0.name.hasSuffix(".ipa") }
         case .altStore, .custom:
             // No GitHub release to pick from.
             return nil
@@ -481,7 +440,7 @@ struct ReleaseCatalog {
                   let asset = source.selectAsset(from: release.assets),
                   let url = URL(string: asset.browser_download_url) else { return nil }
             var name = (release.name ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-            // "Madeira 0.1.3" on the tag "v0.1.3" is no remark: it says what
+            // A title that only repeats the version adds no useful remark.
             // the tag says.
             if source.titleRestatesTag(name, tag: release.tag_name) { name = release.tag_name }
             return (release, ReleaseVersion(tag: release.tag_name, name: name,
@@ -591,7 +550,7 @@ enum SideStoreDownloader {
         /// GitHub-specific `badStatus`).
         case linkStatus(Int)
         /// GitHub lists no build of the branch an Actions build comes from
-        /// ("Madeira", "main").
+        /// (repository name and branch).
         case noBuild(String, branch: String)
         /// nightly.link, which an Actions build is downloaded through, didn't
         /// hand it over: its status, or why it couldn't be reached.
@@ -847,8 +806,7 @@ enum SideStoreDownloader {
     }
 
     /// Where the channel's newest IPA is and what it's called, without asking
-    /// the API. A build whose asset is named after its version (Madeira) has
-    /// its latest tag looked up first.
+    /// the API.
     private static func latestAsset(of source: InstallSource,
                                     channel: ReleaseChannel) async throws -> (url: URL, name: String) {
         if let direct = source.downloadURL(channel), let name = source.assetFileName {
@@ -858,7 +816,6 @@ enum SideStoreDownloader {
         // pre-releases.
         guard channel == .stable, let repo = source.repo else { throw DownloadError.notDownloadable }
         let tag = try await latestTag(of: repo)
-        // Madeira's releases before 0.2.0 aren't its stable channel.
         guard source.isStableRelease(tag: tag) else {
             throw DownloadError.noRelease(source.displayName, channel)
         }
@@ -870,9 +827,7 @@ enum SideStoreDownloader {
         return (url, name)
     }
 
-    /// Whether `source`'s stable channel has a release to install: always, but
-    /// for Madeira only once its latest full release is `firstStableVersion` or
-    /// later. Nil when GitHub couldn't be asked.
+    /// Whether `source`'s stable channel has a release to install.
     static func hasStableRelease(_ source: InstallSource) async -> Bool? {
         guard source.firstStableVersion != nil else { return true }
         guard let repo = source.repo else { return false }
@@ -1857,7 +1812,6 @@ enum IPALibrary {
         // LiveContainer's asset also carries "SideStore", so test it first.
         if name.contains("livecontainer")     { source = .liveContainer }
         else if name.contains("sidestore")    { source = .sideStore }
-        else if name.contains("madeira")      { source = .madeira }
         else if name.contains("altstore")     { source = .altStore }
         else { return nil }
         return (source, name.contains("nightly") ? .nightly : .stable)
@@ -1917,26 +1871,6 @@ enum IPALibrary {
         return scan()
             .filter { $0.source == source && $0.channel == channel && $0.version == nil }
             .min { rank($0) < rank($1) }
-    }
-
-    /// Moves Madeira CI builds the app downloaded before 1.6.5 to the nightly
-    /// names. Madeira had only its CI builds then, saved under the stable
-    /// names ("Madeira.ipa", "Madeira (e96065a).ipa"); its stable channel now
-    /// installs releases. The ledger tells the two apart: a CI build's ETag is
-    /// its zip's bare SHA-256, a release's is the quoted ETag GitHub sent.
-    static func moveMadeiraCIBuildsToNightly() {
-        let fm = FileManager.default
-        for entry in scan() where entry.source == .madeira && entry.channel == .stable && !entry.isImported {
-            guard let etag = DownloadLedger.etag(for: entry.url),
-                  etag.count == 64, etag.allSatisfy(\.isHexDigit) else { continue }
-            let dest = documentsDir.appendingPathComponent(
-                InstallSource.madeira.fileName(.nightly, version: entry.version))
-            guard !fm.fileExists(atPath: dest.path),
-                  (try? fm.moveItem(at: entry.url, to: dest)) != nil else { continue }
-            // A move keeps the size and modification date the ledger checks.
-            DownloadLedger.record(dest, etag: etag)
-            DownloadLedger.forget(entry.url)
-        }
     }
 
     /// The app's earlier download of a version picked under Advanced, if it's
@@ -2082,7 +2016,7 @@ extension IPALibrary {
 
     /// The build of SideNeko's own that the IPA at `url` is, told by its
     /// bundle ID rather than its filename: SideStore, LiveContainer carrying
-    /// SideStore, Madeira, or AltStore. A custom IPA that is one of them is set
+    /// SideStore, or AltStore. A custom IPA that is one of them is set
     /// up just like that build's download. Nil for any other app, for
     /// LiveContainer without SideStore, which has no SideStore to set up, and
     /// for AltStore's beta, which signing doesn't set up as AltStore.
@@ -2262,7 +2196,7 @@ extension IPALibrary {
               let output = try? FileHandle(forWritingTo: dest) else { return nil }
         defer { try? output.close() }
 
-        // Madeira's workflow uploads it stored (`compression-level: 0`), but
+        // Some workflows upload archives without recompression, but
         // upload-artifact deflates by default.
         let written: Int?
         switch entry.method {

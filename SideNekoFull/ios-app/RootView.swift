@@ -566,7 +566,7 @@ struct ToolsView: View {
                         NavigationLink {
                             SideBySideView(manager: sideBySideManager)
                         } label: {
-                            ToolTile(image: "SideBySideLogo", title: L("Side by Side"))
+                            ToolTile(icon: "iphone.and.arrow.forward", title: L("Side by Side"))
                         }
                         .buttonStyle(.plain, sound: .tick)
                         .cascadeItem(1)
@@ -576,7 +576,7 @@ struct ToolsView: View {
                             NavigationLink {
                                 PairingView(manager: pairingManager)
                             } label: {
-                                ToolTile(image: "PairingLogo", title: L("Pairing"))
+                                ToolTile(icon: "link", title: L("Pairing"))
                             }
                             .buttonStyle(.plain, sound: .tick)
                             .cascadeItem(2)
@@ -584,28 +584,28 @@ struct ToolsView: View {
                         NavigationLink {
                             CertsView(manager: certManager)
                         } label: {
-                            ToolTile(image: "CertsLogo", title: L("Certificates"))
+                            ToolTile(icon: "checkmark.seal", title: L("Certificates"))
                         }
                         .buttonStyle(.plain, sound: .tick)
                         .cascadeItem(rowIndex(2))
                         NavigationLink {
                             EntitlementsView(manager: entitlementsManager)
                         } label: {
-                            ToolTile(image: "EntitlementsLogo", title: L("Entitlements"))
+                            ToolTile(icon: "key.horizontal", title: L("Entitlements"))
                         }
                         .buttonStyle(.plain, sound: .tick)
                         .cascadeItem(rowIndex(3))
                         NavigationLink {
                             LocationView(manager: locationManager)
                         } label: {
-                            ToolTile(image: "LocationLogo", title: L("Location spoofing"))
+                            ToolTile(icon: "location.circle", title: L("Location spoofing"))
                         }
                         .buttonStyle(.plain, sound: .tick)
                         .cascadeItem(rowIndex(4))
                         NavigationLink {
                             AppsView(manager: appsManager)
                         } label: {
-                            ToolTile(image: "AppsLogo", title: L("Sideloaded apps"))
+                            ToolTile(icon: "square.stack.3d.up", title: L("Sideloaded apps"))
                         }
                         .buttonStyle(.plain, sound: .tick)
                         .cascadeItem(rowIndex(5))
@@ -692,10 +692,10 @@ private struct ToolTile: View {
                 .logoArt()
         } else {
             ZStack {
-                Rectangle().fill(Theme.raised)
+                Rectangle().fill(Theme.accent.opacity(0.14))
                 Image(systemName: icon ?? "questionmark")
                     .font(.system(size: 28))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theme.accent)
             }
         }
     }

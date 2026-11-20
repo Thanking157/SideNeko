@@ -1026,8 +1026,8 @@ let traditionalChineseStrings: [String: String] = [
 
     "About": "關於",
     "Version %@ (%@)": "版本 %@ (%@)",
-    "SideNeko installs SideStore and LiveContainer straight onto your iPhone, with no PC involved.":
-        "SideNeko 直接把 SideStore 和 LiveContainer 裝到你的 iPhone 上，全程不需要電腦。",
+    "SideNeko signs and installs your apps right on this iPhone — no computer needed, nice and easy :3":
+        "SideNeko 直接在這台 iPhone 上簽署並安裝你的 App，不用電腦，輕鬆搞定 :3",
 
     "Links": "鏈接",
     "Source code": "源代碼",
@@ -1045,6 +1045,8 @@ let traditionalChineseStrings: [String: String] = [
         "每種幣請只通過所示網絡發送。通過其他網絡發送的加密貨幣將無法找回。",
 
     "Special thanks": "特別感謝",
+    "For creating SideInstaller and siboot, which gave SideNeko an important technical reference for its computer-free installation flow and made sideloading with only an iPhone much easier :3":
+        "感謝開發 SideInstaller 與 siboot，為 SideNeko 的免電腦安裝流程提供重要的技術參考，讓只用 iPhone 側載 App 變得更方便 :3",
     "For idevice, the library SideNeko talks to your iPhone through. None of this exists without it.":
         "感謝 idevice——SideNeko 正是通過這個庫與你的 iPhone 通信的。沒有它，這一切都不會存在。",
     "For the support, and for spotting the bugs that got fixed because of it.":
@@ -1054,7 +1056,11 @@ let traditionalChineseStrings: [String: String] = [
     "For the Turkish translation.": "感謝提供土耳其語翻譯。",
 
     "Built with": "基於以下項目",
-    "The open source work this app is built on:": "這個應用所依賴的開源成果：",
+    "SideNeko's computer-free installation design takes inspiration from SideInstaller.":
+        "SideNeko 的免電腦安裝設計參考 SideInstaller。",
+    "Signs and performs the first installation right on the iPhone with the user's own Apple Account — no computer needed w":
+        "透過使用者自己的 Apple 帳號，在 iPhone 上完成簽署與初次安裝，不需要電腦 w",
+    "SideNeko is happily built with these lovely open-source projects w": "SideNeko 開心地使用了這些可愛的開源項目 w",
     "Pairing, the tunnel and the install itself. By jkcoxson, MIT.":
         "配對、隧道以及安裝本身，由 jkcoxson 開發，MIT 許可證。",
     "Apple ID sign in, certificates and signing on the device. By nab138, MIT.":
@@ -1065,8 +1071,6 @@ let traditionalChineseStrings: [String: String] = [
         "本應用為你安裝的側載應用。",
     "Runs sideloaded apps without spending an app slot on each one.":
         "運行側載應用，而不必為每個應用佔用一個名額。",
-    "The developer disk image location spoofing mounts. Mirrored by doronz88.":
-        "位置模擬所掛載的開發者磁盤映像，由 doronz88 鏡像存放。",
 
     "Where to get it": "從哪裡獲取",
     "Only the builds on the official install page and repository are mine. Anyone can fork the source, add a credential stealer and ship it under the same name and icon — so don't trust your Apple ID to a copy from anywhere else.":
@@ -1074,22 +1078,7 @@ let traditionalChineseStrings: [String: String] = [
     "Install page": "安裝頁面",
     "Terms": "條款",
 
-    // MARK: - Madeira
-
     "%@ needs iOS %d or later. This iPhone runs iOS %@.": "%@ 需要 iOS %d 或更高版本。這台 iPhone 運行的是 iOS %@。",
-    "Open Madeira from your Home Screen.": "從主屏幕打開 Madeira。",
-    "In its setup, under “Set up JIT”, pick “In-app with pairing file”: SideNeko already put the file there, so tap “Continue”.":
-        "在它的設置流程中，在“Set up JIT”下選擇“In-app with pairing file”：SideNeko 已經把文件放進去了，輕點“Continue”即可。",
-    "In its setup, under “Set up JIT”, pick how this iPhone gets JIT.":
-        "在它的設置流程中，在“Set up JIT”下選擇這台 iPhone 獲得 JIT 的方式。",
-    "Madeira renews its own signing from now on, when it's open and LocalDevVPN is connected. SideNeko gave it a sign-in for that: a token for Apple's developer service, not your password. Madeira can forget it under Settings › Signing.":
-        "從現在起，只要 Madeira 處於打開狀態且 LocalDevVPN 已連接，它就會自行續簽。為此 SideNeko 給了它一個登錄憑據：用於 Apple 開發者服務的令牌，而不是你的密碼。可以在 Madeira 的 Settings › Signing 中將其移除。",
-    "Its signing lasts 7 days. Before they run out, refresh it here under Tools › Sideloaded apps.":
-        "它的簽名有效期為 7 天。到期前，請在這裡的“工具 › 側載應用”中續簽。",
-    "This pairing file has no RPPairing record, the only kind %@ reads.":
-        "這個配對文件沒有 RPPairing 記錄，而 %@ 只讀取這一種。",
-    "Runs Windows PC games on your iPhone. By Will Faust, GPL-3.0.":
-        "在你的 iPhone 上運行 Windows 電腦遊戲，由 Will Faust 開發，GPL-3.0 許可證。",
 
     // MARK: - App ID cost
 
@@ -1175,10 +1164,10 @@ let traditionalChineseStrings: [String: String] = [
     "Looking for crash logs …": "正在查找崩潰日誌 …",
     "Look for crash logs on this iPhone": "在此 iPhone 上查找崩潰日誌",
     "Look again": "重新查找",
-    "No crash logs from SideStore, LiveContainer or Madeira in the last %d days.":
-        "最近 %d 天內沒有 SideStore、LiveContainer 或 Madeira 的崩潰日誌。",
-    "iOS hands SideNeko its own crashes the next time it opens. Crash logs from SideStore, LiveContainer and Madeira are read from this iPhone through LocalDevVPN.":
-        "SideNeko 自身的崩潰會在下次打開時由 iOS 交給它。SideStore、LiveContainer 和 Madeira 的崩潰日誌通過 LocalDevVPN 從此 iPhone 讀取。",
+    "No crash logs from SideStore or LiveContainer in the last %d days.":
+        "最近 %d 天內沒有 SideStore 或 LiveContainer 的崩潰紀錄。",
+    "iOS hands SideNeko its own crashes the next time it opens. Crash logs from SideStore and LiveContainer are read from this iPhone through LocalDevVPN.":
+        "SideNeko 下次開啟時，iOS 會把它自己的崩潰紀錄交回來；SideStore 與 LiveContainer 的紀錄則會透過 LocalDevVPN 讀取。",
     "Open a GitHub issue": "在 GitHub 上新建 Issue",
     "Share the report": "分享報告",
     "Preview the report": "預覽報告",
