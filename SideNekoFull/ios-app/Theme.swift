@@ -13,14 +13,8 @@ import SwiftUI
  */
 
 /// SideNeko's shared visual language: warm orange, cream and cocoa surfaces.
-/// with a job each, and the cards, buttons and headers every screen is
-/// composed from.
-///
-/// The surfaces are navy so dark they read as night, and the blues are kept
-/// apart by what they do: `navy` for the logo art and the wash at the top of
-/// a page, `blue` for what's filled behind white (the main button), `accent`
-/// for what's drawn on the dark (progress, links, the selection). Depth comes
-/// from a step between surfaces and a hairline edge.
+/// The colours keep the functional contrast of the upstream interface while
+/// giving every page SideNeko's own cosy, cat-like identity.
 enum Theme {
     // MARK: Ramp
 
@@ -53,6 +47,10 @@ enum Theme {
     /// The light blue drawn on the dark: progress, the selection, links and
     /// a card's label icon. At least 6:1 on every surface above.
     static let accent = Color(red: 255 / 255, green: 157 / 255, blue: 77 / 255)
+    /// A soft highlight used by the paw marks and warm card edges.
+    static let cream = Color(red: 255 / 255, green: 232 / 255, blue: 204 / 255)
+    /// A brighter apricot for decorative gradients, never status meaning.
+    static let apricot = Color(red: 255 / 255, green: 184 / 255, blue: 112 / 255)
     /// Done, connected, granted.
     static let positive = Color(red: 76 / 255, green: 195 / 255, blue: 138 / 255)
     /// Something needs the user, or will soon.
@@ -95,13 +93,43 @@ extension View {
 /// a phone's screen. Still: nothing in it moves.
 struct AppBackground: View {
     var body: some View {
-        Theme.page
-            .overlay(alignment: .top) {
-                EllipticalGradient(colors: [Theme.navy.opacity(0.4), Theme.navy.opacity(0)],
-                                   center: .top, startRadiusFraction: 0, endRadiusFraction: 1)
-                    .frame(height: 480)
-            }
-            .ignoresSafeArea()
+        ZStack {
+            Theme.page
+            LinearGradient(colors: [Theme.navy.opacity(0.34), .clear],
+                           startPoint: .topLeading, endPoint: .center)
+            EllipticalGradient(colors: [Theme.accent.opacity(0.14), .clear],
+                               center: .topTrailing,
+                               startRadiusFraction: 0,
+                               endRadiusFraction: 0.86)
+            NekoPawConstellation()
+        }
+        .ignoresSafeArea()
+    }
+}
+
+/// Quiet paw marks in the page background. They are decorative, deliberately
+/// sparse, and stay behind the readable surfaces.
+private struct NekoPawConstellation: View {
+    var body: some View {
+        GeometryReader { proxy in
+            Image(systemName: "pawprint.fill")
+                .font(.system(size: 38, weight: .light))
+                .foregroundStyle(Theme.cream.opacity(0.045))
+                .rotationEffect(.degrees(-18))
+                .position(x: proxy.size.width * 0.12, y: proxy.size.height * 0.22)
+            Image(systemName: "pawprint.fill")
+                .font(.system(size: 58, weight: .light))
+                .foregroundStyle(Theme.accent.opacity(0.04))
+                .rotationEffect(.degrees(22))
+                .position(x: proxy.size.width * 0.9, y: proxy.size.height * 0.58)
+            Image(systemName: "pawprint.fill")
+                .font(.system(size: 30, weight: .light))
+                .foregroundStyle(Theme.cream.opacity(0.035))
+                .rotationEffect(.degrees(8))
+                .position(x: proxy.size.width * 0.2, y: proxy.size.height * 0.86)
+        }
+        .accessibilityHidden(true)
+        .allowsHitTesting(false)
     }
 }
 
@@ -130,6 +158,14 @@ private struct CardSurface<S: InsettableShape>: ViewModifier {
         content
             .background(shape.fill(Theme.card.opacity(shown ? 1 : 0)))
             .overlay(shape.strokeBorder(Theme.hairline.opacity(shown ? 1 : 0), lineWidth: 1))
+            .overlay(alignment: .topLeading) {
+                shape
+                    .strokeBorder(
+                        LinearGradient(colors: [Theme.accent.opacity(shown ? 0.22 : 0), .clear],
+                                       startPoint: .topLeading, endPoint: .bottomTrailing),
+                        lineWidth: 1
+                    )
+            }
     }
 }
 
@@ -716,11 +752,22 @@ struct BrandHeader<Accessory: View>: View {
     @ViewBuilder
     private var glyph: some View {
         if let image {
-            Image(image)
-                .logoArt()
-                .clipShape(tile)
-                // The art's dark tile would melt into the page without it.
-                .overlay(tile.strokeBorder(Theme.hairline, lineWidth: 1))
+            ZStack(alignment: .top) {
+                // Tiny ears make the app mark unmistakably SideNeko even when
+                // the supplied artwork changes later.
+                HStack(spacing: glyphSide * 0.34) {
+                    NekoEar().fill(Theme.apricot.opacity(0.8))
+                    NekoEar().fill(Theme.apricot.opacity(0.8))
+                        .scaleEffect(x: -1, y: 1)
+                }
+                .frame(width: glyphSide * 0.82, height: glyphSide * 0.26)
+                .offset(y: -glyphSide * 0.08)
+
+                Image(image)
+                    .logoArt()
+                    .clipShape(tile)
+                    .overlay(tile.strokeBorder(Theme.accent.opacity(0.28), lineWidth: 1))
+            }
         } else {
             ZStack {
                 tile.fill(Theme.navy)
@@ -730,6 +777,34 @@ struct BrandHeader<Accessory: View>: View {
                     .foregroundStyle(.white)
             }
         }
+    }
+}
+
+/// One softly rounded cat ear used above the SideNeko app mark.
+private struct NekoEar: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.maxY),
+                          control: CGPoint(x: rect.midX, y: rect.minY))
+        path.closeSubpath()
+        return path
+    }
+}
+
+/// The small signature line reused on SideNeko's main surfaces.
+struct NekoSignature: View {
+    var compact = false
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: "pawprint.fill")
+                .foregroundStyle(Theme.accent)
+            Text("Sideloading, the neko way.")
+                .font(compact ? .caption : .subheadline)
+                .foregroundStyle(Theme.cream.opacity(0.82))
+        }
+        .accessibilityElement(children: .combine)
     }
 }
 

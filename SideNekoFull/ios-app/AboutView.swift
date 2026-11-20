@@ -44,9 +44,12 @@ struct AboutView: View {
     private var header: some View {
         BrandHeader(icon: "info.circle", image: "AppLogo", title: "SideNeko",
                     subtitle: "by Thanking157") {
-            Text(versionText)
-                .font(.footnote.monospaced())
-                .foregroundStyle(Theme.muted)
+            VStack(spacing: 4) {
+                NekoSignature(compact: true)
+                Text(versionText)
+                    .font(.footnote.monospaced())
+                    .foregroundStyle(Theme.muted)
+            }
         }
     }
 

@@ -10,7 +10,7 @@
 - URL Scheme：`sideneko`
 - 架構：主程式與 Live Activity 都是 `arm64`
 - 本機檔名：`dist/SideNeko.ipa`（Git 忽略，不提交進原始碼）
-- SHA-256：`d145b468750569491501de233c754dfcc3556bab3d645f4ef0d4b24a7d3745ae`
+- SHA-256：`c7b909755239d4b02d487812563f0f940f4ae25566f6e81be80ec65d4b74687c`
 
 候選 IPA 已由目前的 SideNeko 原始碼建置，不是重新封裝的 SideInstaller
 官方 IPA。以下指令已通過：
@@ -70,7 +70,7 @@ SideNeko v1.0.0 Beta ฅ^•ﻌ•^ฅ
 - 已安裝 App、描述檔與簽署期限管理
 - SideStore 與 LiveContainer 官方版本快速安裝
 - SideNeko 自己維護的 Open Minis／rootshell bootstrap
-- 繁體中文、英文、深色與淺色橘色貓咪介面
+- 繁體中文、英文與暖橘色貓咪介面
 
 這是未簽署的 arm64 測試 IPA，會在目標 iPhone 上使用測試者自己的 Apple
 帳號簽署。Beta 尚不能保證所有裝置或未來 iOS 版本都能成功，免費帳號的

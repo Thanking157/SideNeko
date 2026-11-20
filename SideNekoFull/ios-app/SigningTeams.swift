@@ -41,7 +41,7 @@ struct DeveloperTeam: Codable, Hashable, Identifiable {
         return name.isEmpty ? teamId : "\(name) (\(teamId))"
     }
 
-    /// "Paid · Frizzle (ABCDE12345)": the kind first, as siboot lists it, so a
+    /// "Paid · Example (ABCDE12345)": the kind first, matching the bootstrap, so a
     /// line cut short still shows it. A team of unknown kind goes without one.
     var label: String {
         switch kind {
@@ -57,7 +57,7 @@ struct DeveloperTeam: Codable, Hashable, Identifiable {
     }
 
     /// The team a question starts on: the one that signed this copy of
-    /// SideNeko when it's one of `teams`, so a copy siboot installed with
+    /// SideNeko when it's one of `teams`, so a copy the bootstrap installed with
     /// another team than Apple's first keeps renewing itself in place;
     /// otherwise Apple's first, the team that signed before teams could be
     /// picked.

@@ -125,6 +125,8 @@ struct RootView: View {
             sideBySideManager.signOut()
         }
         .tint(Theme.accent)
+        .toolbarBackground(Theme.card.opacity(0.96), for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
         .preferredColorScheme(.dark)
         // A swipe down is a cancel; the sign-in closing it is not.
         .sheet(isPresented: Binding(
@@ -630,12 +632,19 @@ struct ToolsView: View {
         Engine.deviceCanSelfPair ? position + 1 : position
     }
 
-    /// Just the title: the tiles below carry the iconography on this page.
+    /// SideNeko's compact tool header; the tiles below carry the iconography.
     private var header: some View {
-        Text(L("Tools"))
-            .font(.largeTitle.weight(.medium))
-            .frame(maxWidth: .infinity)
-            .padding(.top, 8)
+        VStack(spacing: 6) {
+            HStack(spacing: 10) {
+                Image(systemName: "pawprint.fill")
+                    .foregroundStyle(Theme.accent)
+                Text(L("Tools"))
+                    .font(.largeTitle.weight(.semibold))
+            }
+            NekoSignature(compact: true)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 8)
     }
 }
 

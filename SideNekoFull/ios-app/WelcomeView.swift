@@ -167,9 +167,10 @@ private struct TermsPage: View {
                     Text("SideNeko")
                         .font(.system(size: 40, weight: .semibold))
                         .foregroundStyle(.primary)
-                    Text(L("an app by Frizzle"))
-                        .font(.body)
-                        .foregroundStyle(.secondary)
+                    Text("by Thanking157")
+                        .font(.body.weight(.medium))
+                        .foregroundStyle(Theme.accent)
+                    NekoSignature()
                 }
                 .setupObject(1)
             }

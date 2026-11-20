@@ -27,7 +27,7 @@ final class DeviceConnection {
     /// The port this iPhone's remote-pairing listener was found on when it
     /// wasn't `rsdPort`: the one it advertised, or the one that answered a
     /// knock. The next connect dials it first, so the search runs once in a
-    /// run of the app, as siboot's later steps dial the port its first one
+    /// run of the app, as later bootstrap steps dial the port its first one
     /// found. The listener only moves when it starts again, as it does when
     /// the iPhone restarts, which ends the run anyway.
     private var movedListenerPort: UInt16?
@@ -560,7 +560,7 @@ final class DeviceConnection {
 
     /// Asks `deviceIP:port` for the RPPairing handshake, as the tunnel's dial
     /// does first, with 8 s to connect and 10 s to answer
-    /// (`si_probe_pairing_port`, siboot 0.19.1's probe). Milliseconds when
+    /// (`si_probe_pairing_port`, the bootstrap's probe). Milliseconds when
     /// the listener is there.
     private static func probeListener(deviceIP: String, port: UInt16) -> ListenerProbe {
         var summary: UnsafeMutablePointer<CChar>?
@@ -592,7 +592,7 @@ final class DeviceConnection {
 
     /// Knocks on `deviceIP`'s dynamic ports (49152–65535), other than
     /// lockdownd's and `tried`, 32 at a time, until one answers the RPPairing
-    /// handshake (`si_find_pairing_port`, siboot 0.19.1's search). Through
+    /// handshake (`si_find_pairing_port`, the bootstrap's search). Through
     /// LocalDevVPN a closed port refuses at once, so it blocks for seconds.
     private static func knockForListener(deviceIP: String, skipping tried: [UInt16]) -> ListenerKnock {
         var port: UInt16 = 0

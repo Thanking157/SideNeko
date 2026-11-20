@@ -168,10 +168,14 @@ struct ContentView: View {
     // MARK: Header
 
     private var header: some View {
-        BrandHeader(icon: "arrow.down.app", image: "AppLogo", title: "SideNeko") {
-            statusDot
-                .transition(.opacity)
-                .id(statusDotID)
+        BrandHeader(icon: "arrow.down.app", image: "AppLogo", title: "SideNeko",
+                    subtitle: "by Thanking157") {
+            VStack(spacing: 4) {
+                NekoSignature(compact: true)
+                statusDot
+                    .transition(.opacity)
+                    .id(statusDotID)
+            }
         }
     }
 
@@ -198,11 +202,14 @@ struct ContentView: View {
 
     /// A quiet brand credit at the foot of the screen.
     private var footer: some View {
-        Text(L("an app by Frizzle"))
-            .font(.caption)
-            .foregroundStyle(Theme.muted)
-            .frame(maxWidth: .infinity)
-            .padding(.top, 8)
+        HStack(spacing: 5) {
+            Image(systemName: "pawprint.fill")
+            Text("SideNeko · by Thanking157")
+        }
+        .font(.caption)
+        .foregroundStyle(Theme.muted)
+        .frame(maxWidth: .infinity)
+        .padding(.top, 8)
     }
 
     // MARK: Update banner
