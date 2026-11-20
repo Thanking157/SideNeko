@@ -23,6 +23,7 @@ plist() { /usr/libexec/PlistBuddy -c "Print :$1" "$2" 2>/dev/null; }
 command -v unzip >/dev/null || fail "unzip is required"
 command -v lipo >/dev/null || fail "Xcode command-line tool lipo is required"
 command -v nm >/dev/null || fail "Xcode command-line tool nm is required"
+command -v strings >/dev/null || fail "the strings command is required"
 
 unzip -tqq "$IPA" || fail "IPA is not a valid ZIP archive"
 
@@ -48,6 +49,7 @@ build="$(plist CFBundleVersion "$info" || true)"
 [ "$bundle_id" = "$EXPECTED_BUNDLE_ID" ] || fail "bundle ID is $bundle_id, expected $EXPECTED_BUNDLE_ID"
 [ "$version" = "$EXPECTED_VERSION" ] || fail "version is $version, expected $EXPECTED_VERSION"
 /usr/bin/lipo -archs "$app/$executable" | tr ' ' '\n' | grep -qx arm64 || fail "main executable has no arm64 slice"
+binaries=("$app/$executable")
 
 scheme="$(plist 'CFBundleURLTypes:0:CFBundleURLSchemes:0' "$info" || true)"
 [ "$scheme" = "sideneko" ] || fail "URL scheme is '$scheme', expected sideneko"
@@ -64,11 +66,18 @@ for extension in "${extensions[@]}"; do
   extension_id="$(plist CFBundleIdentifier "$extension_info" || true)"
   [ -n "$extension_executable" ] || fail "$(basename "$extension") has no CFBundleExecutable"
   [ -x "$extension/$extension_executable" ] || fail "$(basename "$extension") executable is missing"
+  binaries+=("$extension/$extension_executable")
   /usr/bin/lipo -archs "$extension/$extension_executable" | tr ' ' '\n' | grep -qx arm64 || fail "$(basename "$extension") has no arm64 slice"
   case "$extension_id" in "$bundle_id".*) ;; *) fail "extension bundle ID $extension_id is outside $bundle_id" ;; esac
   case "$(basename "$extension")" in *LiveActivity*) live_found=1 ;; esac
 done
 [ "$live_found" -eq 1 ] || fail "the packaged extension is not SideNekoLiveActivity"
+
+for binary in "${binaries[@]}"; do
+  if strings "$binary" | grep -E '/Users/[^/]+/|/private/var/folders/|/var/folders/' > "$stage/local-paths.txt"; then
+    fail "$(basename "$binary") contains a local developer or temporary path"
+  fi
+done
 
 for legal_file in \
   ThirdPartyNotices.txt \
@@ -101,4 +110,5 @@ echo "  extensions: ${#extensions[@]} (Live Activity present)"
 echo "  signing/device core: linked"
 echo "  offline legal notices: complete"
 echo "  credentials/provisioning: none"
+echo "  local build paths: none"
 echo "  sha256: $sha"

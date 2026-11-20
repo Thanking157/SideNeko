@@ -1,18 +1,21 @@
-# Signing engine review — 2026-11-19
+# Signing engine review — 2026-11-20
 
-## Candidate reviewed
+## Integrated revision
 
-`nab138/isideload` 0.5.2, commit
-`326e56229d0727cb6e7b34c8cf03e37e2cd3e17d`, was downloaded into the ignored
-`work/` directory for review. It is MIT licensed (copyright 2025 nab138), pinned
-by Cargo.lock, vendored with its notice, and linked into SideNekoFFI. SideNeko
-now exposes the credential, signing and provisioning entry points used by the
-v1.0 Beta UI.
+SideNekoFFI links a locally patched copy of `nab138/isideload` 0.2.22 at commit
+`e319d931aa3f9d97fbd132149a3916dcd5c71f09`. The revision is pinned by
+Cargo.lock, vendored under `SideNekoFull/rust-core/vendor/isideload`, and shipped
+with its MIT notice. The vendored README records SideNeko's compatibility,
+signing, provisioning, 2FA, session and safety changes.
 
-This is a cleaner candidate than copying SideInstaller because MIT permits
-combination with GPLv3 when its copyright and permission notice are retained.
-Its complete MIT notice and all transitive dependency notices must be shipped
-with releases; the exact dependency graph remains pinned by Cargo.lock.
+`isideload` 0.5.2 at commit
+`326e56229d0727cb6e7b34c8cf03e37e2cd3e17d` was also downloaded into the
+ignored `work/` directory for comparison only. It is not linked into the App.
+
+For the signing engine, isideload's MIT terms avoid introducing another custom
+distribution restriction. Its complete MIT notice and all transitive dependency
+notices remain bundled with the App; the exact dependency graph is pinned by
+Cargo.lock.
 
 ## Security observations
 
@@ -36,15 +39,22 @@ with releases; the exact dependency graph remains pinned by Cargo.lock.
   dependency audit are required. The upstream crate is a Rust library, not a
   drop-in iOS framework.
 
-## Integration gate
+## Integration evidence and release gates
 
-Do not present Apple Account sign-in in the released UI until all of these pass:
+The Beta UI can expose Apple Account sign-in for owner-operated testing, but it
+must not describe the flow as fully validated until all of these pass:
 
-1. Reproducible Rust toolchain and locked dependency build for arm64 iOS. **Done
-   locally; CI reproduction remains pending.**
-2. Keychain-only secret storage and complete deletion flow.
-3. Host allow-list and TLS validation tests; debug TLS bypass impossible in a
-   release build.
+1. Reproducible Rust toolchain and locked dependency build for arm64 iOS. **A
+   fresh local clone rebuilt the locked Rust core, XCFramework and App
+   successfully. GitHub CI reproduces Rust tests and linting; an Xcode iOS build
+   in CI remains pending.**
+2. Device-only Keychain password storage; signing/session material stored only
+   in private Application Support, excluded from backups; complete deletion
+   flows for both locations.
+3. Bundled Anisette endpoints use HTTPS, custom endpoints remain an explicit
+   advanced-user choice, normal TLS validation stays enabled, the selected
+   third-party endpoint is disclosed, and production code never calls the
+   vendored `danger_debug` TLS bypass.
 4. Redaction tests for success, failure, cancellation, 2FA, and certificate
    replacement paths.
 5. Test Apple Account and physical-device validation with the account owner
