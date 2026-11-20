@@ -14,10 +14,9 @@
 # Needs Xcode with the iOS 27.1 SDK or later, Rust with the aarch64-apple-ios
 # target (added here when rustup is around) and xcodegen.
 #
-# For a clean clone, like the one CI checks out. The Xcode project is generated
-# into the checkout, so one that already has its own SideNeko.xcodeproj is
-# refused rather than overwritten; scripts/export-ipa.sh builds from there.
-# Nothing is signed and nothing is sent to Apple.
+# The Xcode project is generated under the ignored build folder, leaving the
+# tracked project and any local Xcode changes untouched. Nothing is signed and
+# nothing is sent to Apple.
 #
 # Config, all overridable by env:
 #   VERSION        CFBundleShortVersionString, e.g. 1.6.0 (default: project.yml's)
@@ -54,8 +53,6 @@ case "$OUTPUT" in /*) ;; *) OUTPUT="$PWD/$OUTPUT" ;; esac
 case "$DERIVED_DATA" in /*) ;; *) DERIVED_DATA="$PWD/$DERIVED_DATA" ;; esac
 cd "$ROOT"
 
-[ -e SideNeko.xcodeproj ] &&
-  die "this checkout already has a SideNeko.xcodeproj, which generating one would overwrite. Run this in a clean clone, or use scripts/export-ipa.sh here."
 if [ -n "$VERSION" ]; then
   # What iOS accepts as CFBundleShortVersionString.
   [[ "$VERSION" =~ ^[0-9]+(\.[0-9]+){0,2}$ ]] || die "VERSION must be up to three numbers, like 1.6.0 (got: $VERSION)"
@@ -101,10 +98,9 @@ fi
 [ -d SideNekoFFI.xcframework ] || die "no SideNekoFFI.xcframework after the Rust build"
 
 # --- Xcode project ------------------------------------------------------------
-echo "==> Generating SideNeko.xcodeproj from project.yml"
-xcodegen generate --spec project.yml --quiet
-pbx=SideNeko.xcodeproj/project.pbxproj
-[ -f "$pbx" ] || die "xcodegen made no $pbx"
+echo "==> Generating an isolated SideNeko.xcodeproj from project.yml"
+project="$(./scripts/prepare-xcode-project.sh)"
+pbx="$project/project.pbxproj"
 # Give the app the bundle id to build with, and the extension the same id plus
 # its suffix. The app's id is the shortest one; the extension's starts with it.
 app_id="$(grep -oE 'PRODUCT_BUNDLE_IDENTIFIER = [^;]+;' "$pbx" | sed -E 's/.* = "?([^";]+)"?;/\1/' |
@@ -120,7 +116,7 @@ echo "==> Building SideNeko (Release, unsigned)"
 # A precompiled module of an older Rust header fails the build.
 find "$DERIVED_DATA" -name 'SideNekoFFI-*.pcm' -delete 2>/dev/null || true
 xcodebuild build \
-  -project SideNeko.xcodeproj -scheme SideNeko -configuration Release \
+  -project "$project" -scheme SideNeko -configuration Release \
   -destination 'generic/platform=iOS' -derivedDataPath "$DERIVED_DATA" \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
   ${overrides[@]+"${overrides[@]}"}

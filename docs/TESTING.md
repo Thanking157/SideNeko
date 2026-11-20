@@ -10,6 +10,8 @@
   tracked source, and their published SHA-256 files match.
 - Xcode 27.2 clean-builds the unsigned SideNeko 1.0.0 Release for a generic
   arm64 iOS device with the SideNekoFFI library and Live Activity extension.
+  The scripted build generates an isolated project under the ignored build
+  folder, so a tracked or locally edited Xcode project is never overwritten.
 - The Debug app also builds for the generic arm64 iOS Simulator destination.
 - The generated IPA is a valid ZIP containing `Payload/SideNeko.app`, bundle ID
   `io.thanking157.sideneko`, version 1.0.0 and an arm64 executable.
@@ -17,7 +19,7 @@
   the required Info.plist identity, URL scheme, arm64 main/extension binaries,
   Live Activity, linked Apple sign-in/signing/pairing FFI symbols and absence of
   provisioning profiles, credentials, pairing records or an existing signature.
-- The localization checker finds all 807 Traditional Chinese and English keys
+- The localization checker finds all 810 Traditional Chinese and English keys
   represented; no duplicate keys or placeholder mismatches exist. Some
   non-primary translations remain incomplete.
 - The Mac currently has no installed iOS Simulator runtime, so simulator UI

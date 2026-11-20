@@ -15,10 +15,8 @@
 # Needs Xcode with the iOS 27 SDK, Rust with the aarch64-apple-ios-sim target
 # (added here when rustup is around) and xcodegen.
 #
-# For a clean clone or worktree, like scripts/build-ipa.sh: the Xcode project is
-# generated into the checkout, so one that already has its own
-# SideNeko.xcodeproj is refused rather than overwritten (one this script
-# generated is generated again). Nothing is signed.
+# The Xcode project is generated under the ignored build folder, leaving the
+# tracked project and any local Xcode changes untouched. Nothing is signed.
 #
 # Config, all overridable by env:
 #   SIMULATOR_ID   UDID of the simulator to run on (default: the first iPhone on
@@ -42,12 +40,6 @@ die() { echo "error: $*" >&2; exit 1; }
 case "$DERIVED_DATA" in /*) ;; *) DERIVED_DATA="$PWD/$DERIVED_DATA" ;; esac
 case "$RESULT_BUNDLE" in /*) ;; *) RESULT_BUNDLE="$PWD/$RESULT_BUNDLE" ;; esac
 cd "$ROOT"
-
-# Left in a project this script generated, so the next run may replace it.
-MARKER=SideNeko.xcodeproj/.generated-by-check-ios
-if [ -e SideNeko.xcodeproj ] && [ ! -e "$MARKER" ]; then
-  die "this checkout already has a SideNeko.xcodeproj, which generating one would overwrite. Run this in a clean clone or worktree."
-fi
 
 # shellcheck disable=SC1091
 if ! command -v cargo >/dev/null && [ -f "$HOME/.cargo/env" ]; then
@@ -74,9 +66,8 @@ fi
 [ -d SideNekoFFI.xcframework/ios-arm64-simulator ] || die "no simulator slice in SideNekoFFI.xcframework"
 
 # --- Xcode project ------------------------------------------------------------
-echo "==> Generating SideNeko.xcodeproj from project.yml"
-xcodegen generate --spec project.yml --quiet
-touch "$MARKER"
+echo "==> Generating an isolated SideNeko.xcodeproj from project.yml"
+project="$(./scripts/prepare-xcode-project.sh)"
 
 # --- Simulator ----------------------------------------------------------------
 if [ -z "$SIMULATOR_ID" ]; then
@@ -108,7 +99,7 @@ rm -rf "$RESULT_BUNDLE"
 mkdir -p "$(dirname "$RESULT_BUNDLE")"
 rc=0
 xcodebuild test \
-  -project SideNeko.xcodeproj -scheme SideNeko -configuration Debug \
+  -project "$project" -scheme SideNeko -configuration Debug \
   -destination "id=$SIMULATOR_ID" -derivedDataPath "$DERIVED_DATA" \
   -resultBundlePath "$RESULT_BUNDLE" -quiet \
   CODE_SIGNING_ALLOWED=NO || rc=$?
