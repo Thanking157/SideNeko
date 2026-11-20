@@ -29,6 +29,8 @@ Apple 登入／簽署／配對 FFI 的包，也會拒絕含簽署描述檔、帳
 - [x] SideNeko bootstrap 測試通過（Open Minis 108 項；rootshell 16 項）。
 - [x] Swift 核心、翻譯完整性與 Rust Clippy 嚴格檢查通過。
 - [x] Xcode 27.2 建置 generic iOS device 與 generic iOS Simulator 成功。
+- [x] App 已套用 SideNeko 自有暖橘貓系視覺；畫面不顯示上游專案名稱，
+  必要來源歸屬保留在授權文件與衍生原始碼標頭。
 - [x] 自有 bootstrap 與配對 WASM 已由追蹤的 SideNeko 原始碼建置並部署。
 - [x] 網站、bootstrap 與公開二進位均由 `thanking157.github.io/SideNeko` 提供。
 - [ ] 取得 SideInstaller 著作權人的書面允許，可公開散布編譯後的 SideNeko
