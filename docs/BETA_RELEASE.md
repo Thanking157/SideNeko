@@ -10,7 +10,7 @@
 - URL Scheme：`sideneko`
 - 架構：主程式與 Live Activity 都是 `arm64`
 - 本機檔名：`dist/SideNeko.ipa`（Git 忽略，不提交進原始碼）
-- SHA-256：`90e756bf20a61178265068d91ca23528572d847e5834061a7c4b86f0176dc70c`
+- SHA-256：`e863d1b00f5d9bfe4eba19af3313bd34e377fa876170dd128ad24195a646a3fd`
 
 候選 IPA 已由目前的 SideNeko 原始碼建置，不是重新封裝的 SideInstaller
 官方 IPA。以下指令已通過：
