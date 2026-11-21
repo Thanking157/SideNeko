@@ -48,57 +48,14 @@ The following features are planned for SideNeko v1.0:
 - 🐾 **Quick Installation Options** — Provide installation options for SideStore and LiveContainer.
 - 🌎 **Multiple Languages** — Support Traditional Chinese and English.
 - 🔒 **Privacy Protection** — No account secrets are processed through servers operated by SideNeko.
-
-## 🚧 Current Development Status
-
-SideNeko is still under development, and not all signing and installation features are complete yet awa
-
-**Completed:**
-- SwiftUI interface foundation for iPhone / iPad.
-- Traditional Chinese and English language resources.
-- Local IPA reading, basic ZIP validation, and SHA-256.
-- Local app list storage, viewing, and deletion.
-- Signing status data model.
-- macOS core tests and iOS compilation tests.
-
-**In Development:**
-- Apple Account login and 2FA verification.
-- Development certificates and IPA signing.
-- iOS 27 on-device pairing and installation.
-- Computer-free initial installation process.
-- SideStore / LiveContainer quick installation.
-- Real-device testing on iPhone / iPad.
-
-Successful compilation doesn't mean all features are fully functional yet! Features will be gradually made available after real-device testing is completed :3
-
+- 
 ## 📲 Installation
 
 SideNeko aims to let users complete the initial installation using only their iPhone or iPad!
 
-The current plan is based on the publicly documented iOS 27 on-device installation method from SideInstaller / siboot, using Open Minis, LocalDevVPN, and a pairing channel.
-
 Installation website:
 
 https://thanking157.github.io/SideNeko/
-
-**Note:** The computer-free installation process is still under development and testing.
-
-A working release and installation instructions will be provided after verification is completed w
-
-## ⚠️ Notes
-
-This is my first time making this kind of iOS sideloading app w
-
-The initial version may have some bugs or stability issues, so please bear with me @@;
-
-If you encounter any problems or bugs, feel free to report them through GitHub Issues. I'll do my best to investigate and fix them :D
-
-A few more things to keep in mind:
-
-- Some features are still experimental, and actual results may vary depending on the device and iOS version.
-- Signing expiration periods and limitations for free Apple Accounts are subject to Apple's policies.
-- SideNeko does not guarantee compatibility with every device or that signed apps will never be revoked.
-- SideNeko does not provide an IPA store, pirated resources, or shared enterprise certificates.
 
 ## 🔒 Privacy
 
