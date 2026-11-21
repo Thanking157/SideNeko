@@ -33,7 +33,7 @@ const URL_BAG: &str = "https://gsa.apple.com/grandslam/GsService2/lookup";
 ///   Mac on those pages alone is a mix Apple can close. `AppleAccount` falls
 ///   back to the Mac on a bare 403.
 const MAC_CLIENT_INFO: &str =
-    "<Mac15,7> <macOS;27.0;26A5378j> <com.apple.AuthKit/1 (com.apple.akd/1.0)>";
+    "<Mac15,7> <Mac OS X;27.0;26A5378j> <com.apple.AuthKit/1 (com.apple.akd/1.0)>";
 
 /// The URL-bag entries this crate uses.
 const BAG_KEYS: [&str; 5] = [
@@ -265,7 +265,7 @@ impl GrandSlam {
         }
         headers.insert(
             "X-Mme-Client-Info",
-            HeaderValue::from_str(&client_info.client_info)?,
+            HeaderValue::from_str(&client_info.client_info.replace("<macOS;", "<Mac OS X;"))?,
         );
         headers.insert(
             "User-Agent",
